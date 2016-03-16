@@ -1,0 +1,30 @@
+{
+  "name": "big-cookbook",
+  "authors": [
+    "Alfred J Kwack <alfred_j_kwack@badsoda.com>"
+  ],
+  "description": "A wordpress theme developped for www.atableavecmaya.com",
+  "main": "index.php",
+  "moduleType": [],
+  "keywords": [
+    "wordpress",
+    "theme"
+  ],
+  "license": "GPLv2 or later",
+  "homepage": "www.atableavecmaya.com",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "^2.2.1",
+    "jquery-focuspoint": "jonom/jquery-focuspoint#^1.1.1",
+    "normalize-css": "necolas/normalize.css#^3.0.3",
+    "smartcrop": "jwagner/smartcrop.js",
+    "Background-Check": "kennethcachia/Background-Check#^1.2.2"
+  }
+}

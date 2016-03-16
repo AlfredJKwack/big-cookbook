@@ -1,0 +1,165 @@
+@import url(https://fonts.googleapis.com/css?family=Josefin+Slab);
+@import url(https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300);
+@import url(https://fonts.googleapis.com/css?family=Lobster);
+/***
+ * General	
+ */
+ 	html { 
+		font-size: 62.5%;
+	} 
+	body {
+		font-size: 1.9rem;
+		line-height: 1.4;
+		text-rendering: optimizeLegibility;
+		font-family: 'Josefin Slab', serif;
+	}
+	
+/***
+ * Headers	
+ *
+ */
+	.site-brand-container h1 {
+		font-size: 3rem;
+		font-family: 'Lobster', cursive;
+		font-weight: 400;
+	}
+	.site-brand-container h1 a#brand-link {
+		
+	}
+/*
+	#abstract h1 {
+	    font-family: 'Arvo', serif;
+	    font-size: 6rem;
+	    line-height: 7rem;
+	}
+*/
+	#abstract h1 {
+	 	font-family: 'Open Sans Condensed', sans-serif;
+	    font-size: 8rem;
+	    line-height: 9rem;
+	    font-weight: 400;
+	    margin-top: 0px;
+	    margin-bottom: 1.7rem;
+	}
+	#article_body > section > p:first-child {
+		font-size: 2.5rem;
+		line-height: 2.6rem;	
+	}
+	#article_body > section > p:first-child:first-letter { 
+		float: left; 
+		color: #903; 
+		font-size: 6rem; 
+		font-weight: bold;
+		line-height: 5rem; 
+		padding-right: 0.2rem; 
+		padding-left: 0.2rem; 
+/* 		margin-top: -0.2rem; */
+		font-family: sans;
+	}
+	
+/***
+ * Blockquotes	
+ */
+	blockquote, q {
+		quotes: "“" "”" "‘" "’";
+	}
+	blockquote {
+	    background: #f9f9f9;
+	    border-left: 10px solid #ccc;
+	    margin: 1.5em 10px;
+	    padding: .5em 10px;
+	}
+	
+	blockquote:before {
+	    color: #ccc;
+	    content: open-quote;
+	    font-family: "Times New Roman", Times, serif;
+	    font-size: 6em;
+	    line-height: 0.1em;
+	    margin-right: -0.05em;
+	    vertical-align: -0.36em;
+	}
+	blockquote p {
+	  display: inline;
+	}
+	blockquote cite {
+	    position: relative;
+	    bottom: -0.2em;
+	    font-size: 0.9em;
+	}
+
+/***
+ * anchors	
+ */
+ 	a {
+	 	text-decoration: none;
+ 	}
+ 	a:not(.button) {
+		position: relative;
+		display: inline-block;
+		outline: none;
+		line-height: 1.35; /* must be .1 smaller than parent line height */
+		font-weight: 400;
+		vertical-align: bottom;
+		white-space: nowrap;
+		color: #404d5b;
+		border-bottom: 1px solid rgba(52,73,94,0.4);
+		-webkit-transition: background-color 0.3s, border-color 0.3s;
+		-moz-transition: background-color 0.3s, border-color 0.3s;
+		-ms-transition: background-color 0.3s, border-color 0.3s;
+		-o-transition: background-color 0.3s, border-color 0.3s;
+		transition: background-color 0.3s, border-color 0.3s; 	
+	}
+	a:hover:not(.button), 
+	a:focus:not(.button) {
+		border-color: rgba(52,73,94,0);
+		background-color: rgba(52,73,94,0.1);
+	}
+	/* deal with special cases */
+	div#meta.background--dark > span > a {
+    	color: white;
+	}
+	div#meta.background--light > span > a: {
+    	color: black;
+	}
+	div#meta.background--dark > span > a:hover, 
+	div#meta.background--dark > span > a:focus {
+		border-color: rgba(52,73,94,0);
+		background-color: rgba(102, 109, 116, 0.5);
+	}
+
+/***
+ * lists	
+ */
+ 	ul {
+	 	list-style:circle;
+ 	}
+	ol {
+	    list-style-type: none;
+	    margin-left: 13px;
+	    padding-right: 0;	
+	}
+	ol li {
+		counter-increment: step-counter;
+		display: block;
+		margin: 0.3em 0;
+	}
+	ol li::first-letter {
+/* 		font-size: 5rem; */
+	}
+	ol li::before {
+		font-size: 1.3rem;
+	    background-color: #f9f9f9;
+	    border: 1px solid #ccc;
+		content: counter(step-counter);
+	    position: relative;
+	    display: inline-block;
+	    left: -2.6em;
+	    margin-right: -1.4em;
+	    width: 1.2em;
+	    height: 1.2em;
+	    text-align: center;
+	    -webkit-border-radius: 1.5em;
+	    -moz-border-radius: 1.5em;
+	    border-radius: 1.5em;
+	}
