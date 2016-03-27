@@ -12,6 +12,8 @@ if ( ! is_active_sidebar( 'sidebar-1' ) ) {
 }
 ?>
 
-<aside id="secondary" class="widget-area" role="complementary">
-	<?php dynamic_sidebar( 'sidebar-1' ); ?>
-</aside><!-- #secondary -->
+
+        <nav id="navigation_main" role="navigation" class="is--fadeable">
+			<?php dynamic_sidebar( 'sidebar-1' ); ?>
+            <a href="#" class="right-menu button trigger">close</a>
+        </nav>

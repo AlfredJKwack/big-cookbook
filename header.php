@@ -10,10 +10,14 @@
  */
 
 ?><!DOCTYPE html>
-<html <?php language_attributes(); ?>>
+<!--[if lt IE 8]>      <html class="no-js lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js ie8"> <![endif]-->
+<!--[if IE 9]>         <html class="no-js ie9"> <![endif]-->
+<!--[if gt IE 9]><!--> <html class="no-js" <?php language_attributes(); ?>> <!--<![endif]-->
 <head>
 <meta charset="<?php bloginfo( 'charset' ); ?>">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 <link rel="profile" href="http://gmpg.org/xfn/11">
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
 
@@ -21,30 +25,16 @@
 </head>
 
 <body <?php body_class(); ?>>
-<div id="page" class="site">
+
 	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'big-cookbook' ); ?></a>
-
-	<header id="masthead" class="site-header" role="banner">
-		<div class="site-branding">
-			<?php
-			if ( is_front_page() && is_home() ) : ?>
-				<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-			<?php else : ?>
-				<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
-			<?php
-			endif;
-
-			$description = get_bloginfo( 'description', 'display' );
-			if ( $description || is_customize_preview() ) : ?>
-				<p class="site-description"><?php echo $description; /* WPCS: xss ok. */ ?></p>
-			<?php
-			endif; ?>
-		</div><!-- .site-branding -->
-
-		<nav id="site-navigation" class="main-navigation" role="navigation">
-			<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'big-cookbook' ); ?></button>
-			<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'primary-menu' ) ); ?>
-		</nav><!-- #site-navigation -->
-	</header><!-- #masthead -->
-
-	<div id="content" class="site-content">
+	<div class="main-container">
+		<div class="site-brand-container">
+			<header id="brand-wrapper" class="wrapper clearfix">
+				<h1 class="title">
+				<a id="brand-link" class="button" rel="home" href="<?php echo esc_url( home_url( '/' ) ); ?>"><span>A table</span> <span>avec</span> <span>Maya</span>
+				<!-- PHP: <?php bloginfo( 'name' ); ?> -->
+				</a>
+				</h1>
+			</header>
+		</div>
+        <div class="main wrapper clearfix">
