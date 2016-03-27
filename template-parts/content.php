@@ -68,15 +68,13 @@
 
 		<div class="col col--6">
 
-			<a href="<?php esc_url( get_permalink() ) ?>" class="list-item active list-item--stacked">
-				<div class="dogear"></div>
-
+			<a href="<?php esc_url( get_permalink() ) ?>" class="list-item list-item--stacked">
 				  
 				    <div class="thumbnail" style="background-color: #131723">
 				      <div class="image-wrapper content-fill" style="overflow: hidden;">
 							<?php 
 							if ( has_post_thumbnail() ) {
-								the_post_thumbnail( 'medium', array( 'class' => 'is--invisible' ) ); 
+								the_post_thumbnail( 'medium', array( 'class' => '' ) ); 
 							}; ?>
 				      </div>
 				    </div>
@@ -93,6 +91,7 @@
 				</div>
 			</a>
 		</div>
+		<a href="#" class="left-menu button trigger">close</a>
 
 <?php
 	}
