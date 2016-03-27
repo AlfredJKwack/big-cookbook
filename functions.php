@@ -127,19 +127,29 @@ function big_cookbook_scripts() {
 
 	wp_enqueue_script( 'smartcrop', get_template_directory_uri() . '/lib/vendor/smartcrop.js', array() );
 
-	wp_enqueue_script( 'smartcrop', get_template_directory_uri() . '/lib/vendor/vendor/color-thief.js', array() );
+	wp_enqueue_script( 'color-thief', get_template_directory_uri() . '/lib/vendor/color-thief.js', array() );
 
-	wp_enqueue_script( 'smartcrop', get_template_directory_uri() . '/lib/vendor/vendor/background-check.js', array() );
+	wp_enqueue_script( 'background-check', get_template_directory_uri() . '/lib/vendor/background-check.js', array() );
 
 	wp_enqueue_script( 'big-cookbook-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
 
 	wp_enqueue_script( 'big-cookbook-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20151215', true );
+
+	wp_enqueue_script( 'big-cookbook-main', get_template_directory_uri() . '/js/main.js', array(), '20151215', true );	
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
 }
 add_action( 'wp_enqueue_scripts', 'big_cookbook_scripts' );
+
+/**
+ * Change the excerpt length to something suitable for this theme
+ */
+function big_cookbook_excerpt_length( $length ) {
+	return 20;
+}
+add_filter( 'excerpt_length', 'big_cookbook_excerpt_length', 999 );
 
 /**
  * Implement the Custom Header feature.

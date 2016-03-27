@@ -25,7 +25,7 @@ function big_cookbook_posted_on() {
 	);
 
 	$posted_on = sprintf(
-		esc_html_x( 'Posted on %s', 'post date', 'big-cookbook' ),
+		esc_html_x( 'Published on %s', 'post date', 'big-cookbook' ),
 		'<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . $time_string . '</a>'
 	);
 

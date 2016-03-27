@@ -7,7 +7,7 @@ function calcFocus(cropSize, imgSize) {
 	return focusPt;
 }
 
-$(document).ready(function() {
+jQuery(document).ready( function($) {
 	
 	// menu handling
 	$('.left-menu').click(function() {
