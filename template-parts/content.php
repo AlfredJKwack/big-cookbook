@@ -68,13 +68,20 @@
 
 		<div class="col col--6">
 
-			<a href="<?php esc_url( get_permalink() ) ?>" class="list-item list-item--stacked">
+			<?php 
+			$entry_permalink = '<a href="%1$s" class="list-item list-item--stacked">';
+			$entry_permalink = sprintf( $entry_permalink,
+				esc_url( get_permalink() )
+			);
+
+			echo $entry_permalink;
+			?>
 				  
 				    <div class="thumbnail" style="background-color: #131723">
 				      <div class="image-wrapper content-fill" style="overflow: hidden;">
 							<?php 
 							if ( has_post_thumbnail() ) {
-								the_post_thumbnail( array( 380, 380 ) );
+								the_post_thumbnail( 'category-thumb' );
 							}; ?>
 				      </div>
 				    </div>

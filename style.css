@@ -546,7 +546,7 @@ Underscores is distributed under the terms of the GNU GPL v2 or later.
 }
 
 #article_body a.right-menu {
-	padding: 0 0.2em;
+	padding: 0 0.2em 0.4em;
 	line-height: 1.9em;
 	transition: transform 0.3s;
 }

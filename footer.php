@@ -13,8 +13,7 @@
 
 
 
-		</div> <!-- #main -->
-	</div> <!-- #main-container -->
+
 
 	<footer id="colophon" class="site-footer is--hidden" role="contentinfo">
 		<div class="site-info">
