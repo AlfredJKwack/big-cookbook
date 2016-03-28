@@ -16,9 +16,7 @@
 		</div> <!-- #main -->
 	</div> <!-- #main-container -->
 
-	<!-- BEGIN OLD TEMPLATE  -->
-
-	<footer id="colophon" class="site-footer" role="contentinfo">
+	<footer id="colophon" class="site-footer is--hidden" role="contentinfo">
 		<div class="site-info">
 			<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'big-cookbook' ) ); ?>"><?php printf( esc_html__( 'Proudly powered by %s', 'big-cookbook' ), 'WordPress' ); ?></a>
 			<span class="sep"> | </span>

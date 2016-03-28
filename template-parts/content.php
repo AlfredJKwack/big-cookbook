@@ -74,7 +74,7 @@
 				      <div class="image-wrapper content-fill" style="overflow: hidden;">
 							<?php 
 							if ( has_post_thumbnail() ) {
-								the_post_thumbnail( 'medium', array( 'class' => '' ) ); 
+								the_post_thumbnail( array( 380, 380 ) );
 							}; ?>
 				      </div>
 				    </div>
@@ -86,12 +86,26 @@
 					<div class="excerpt"><?php the_excerpt () ?></div>
 
 					<div class="list-item-meta">
-						<time class="date" datetime="<?php get_the_modified_date( 'c' ) ?>"> <?php get_the_modified_date() ?> </time>
+
+						<?php
+
+						$time_label = '<time class="date" datetime="%1$s">%2$s</time>';
+
+
+						$time_label = sprintf( $time_label,
+							esc_attr( get_the_date( 'c' ) ),
+							esc_html( get_the_date() )
+						);
+
+						echo $time_label
+
+						?>
+
 					</div>
 				</div>
 			</a>
 		</div>
-		<a href="#" class="left-menu button trigger">close</a>
+		
 
 <?php
 	}

@@ -37,7 +37,8 @@ get_header(); ?>
 			get_template_part( 'template-parts/content', 'none' );
 
 		endif; ?>
-		
+					<a href="#" class="left-menu button trigger">close</a>
+				</div><!-- #blog-list -->
 			</aside><!-- #article_list -->
 
 <?php

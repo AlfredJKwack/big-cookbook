@@ -79,12 +79,12 @@ Underscores is distributed under the terms of the GNU GPL v2 or later.
 }
 
 .col--6 {
-    width: 100%;
+    width: 50%;
 }
 .col {
     float: left;
-    padding-left: 1.5%;
-    padding-right: 1.5%;
+    padding-left: 2%;
+    padding-right: 2%;
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
@@ -172,8 +172,8 @@ Underscores is distributed under the terms of the GNU GPL v2 or later.
 }
 
 #article_list {
-	width: 45%;
-	padding: 30px 2.5%;
+	width: 50%;
+/*	padding: 30px 2.5%; */
 	position: absolute;
 	background-color: #ededed;
 	overflow-x: hidden;
@@ -182,18 +182,14 @@ Underscores is distributed under the terms of the GNU GPL v2 or later.
 	bottom: 0;
 }
 #article_list > :first-child {
-	margin-top: 0px;
+	margin: 30px 5% 2em;
 	line-height: 50px; /* Same as button */
 }
 
 #article_list > #blog-list {
-	width: 50%;
+	margin: 0 3%;
 }
 
-#article_list > #blog-list .list-item--stacked {
-    display: block;
-    height: 330px;
-}
 #article_list > #blog-list .list-item {
     width: 100%;
     height: 210px;
@@ -210,10 +206,22 @@ Underscores is distributed under the terms of the GNU GPL v2 or later.
     display: flex;
     align-items: flex-start;
 }
+
+#article_list > #blog-list a.list-item {
+	white-space: normal;
+	border: initial;
+}
+
+#article_list > #blog-list .list-item--stacked {
+    display: block;
+    height: 330px;
+}
+
 #article_list > #blog-list .list-item--stacked .thumbnail {
     width: 100%;
     height: 65%;
 }
+
 #article_list > #blog-list .thumbnail {
     width: 50%;
     height: 100%;
@@ -225,10 +233,7 @@ Underscores is distributed under the terms of the GNU GPL v2 or later.
     -ms-flex: none;
     flex: none;
 }
-#article_list > #blog-list .list-item--stacked .thumbnail .image-wrapper {
-    margin-left: -10%;
-    margin-top: -5%;
-}
+
 #article_list > #blog-list .thumbnail .image-wrapper {
     width: 120%;
     height: 120%;
@@ -255,6 +260,20 @@ Underscores is distributed under the terms of the GNU GPL v2 or later.
     transition-timing-function: cubic-bezier(.33,0,.2,1);
     -transition-delay: 0;
 }
+
+#article_list > #blog-list .list-item--stacked .thumbnail .image-wrapper {
+    margin-left: -10%;
+    margin-top: -5%;
+}
+
+#article_list > #blog-list .list-item:not(.active):hover .thumbnail .image-wrapper {
+    -webkit-transform: scale(.90,.90);
+    -moz-transform: scale(.90,.90);
+    -ms-transform: scale(.90,.90);
+    -o-transform: scale(.90,.90);
+    transform: scale(.90,.90);
+}
+
 #article_list > #blog-list .list-item-text {
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
@@ -270,10 +289,12 @@ Underscores is distributed under the terms of the GNU GPL v2 or later.
     -ms-flex: 1;
     flex: 1;
 }
+
 #article_list > #blog-list .list-item--stacked .list-item-text {
     width: 100%;
     height: 40%;
 }
+
 #article_list > #blog-list .list-item-text .title {
     font-size: 1.8rem;
     line-height: 24px;
@@ -470,6 +491,11 @@ Underscores is distributed under the terms of the GNU GPL v2 or later.
 	transition-delay: 0;
 }
 
+#article_body img.alignnone {
+    width: 100%;
+    height: 100%;
+}
+
 .main > article > footer {
 	padding-bottom: 180px;
 }
@@ -494,7 +520,7 @@ Underscores is distributed under the terms of the GNU GPL v2 or later.
 #article_body a.right-menu {
 	position: absolute;
 	top: 30px; /* offset from top */
-	right: 30px;
+	right: 5%;
 }
 
 #article_list a.left-menu,
