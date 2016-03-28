@@ -112,7 +112,7 @@ function big_cookbook_widgets_init() {
 add_action( 'widgets_init', 'big_cookbook_widgets_init' );
 
 /**
- * Enqueue scripts and styles.
+ * Enqueue other scripts and styles.
  */
 function big_cookbook_scripts_important() {
 	wp_enqueue_style( 'normalize-css', get_template_directory_uri() . '/lib/vendor/normalize.css', array() );
@@ -120,6 +120,9 @@ function big_cookbook_scripts_important() {
 add_action( 'wp_enqueue_scripts', 'big_cookbook_scripts_important', 5 );
 
 function big_cookbook_scripts() {
+	
+	wp_enqueue_script( 'jquery' );
+
 	wp_enqueue_style( 'big-cookbook-style', get_stylesheet_uri() );
 
 	wp_enqueue_style( 'focuspoint', get_template_directory_uri() . '/lib/vendor/focuspoint.css', array() );
@@ -143,6 +146,7 @@ function big_cookbook_scripts() {
 	}
 }
 add_action( 'wp_enqueue_scripts', 'big_cookbook_scripts' );
+
 
 /**
  * Change the excerpt length to something suitable for this theme

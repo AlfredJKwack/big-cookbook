@@ -8,20 +8,17 @@ function calcFocus(cropSize, imgSize) {
 }
 
 jQuery(document).ready( function($) {
-	
+
 	// menu handling
 	$('.left-menu').click(function() {
 		if ($('body').hasClass('is--pushed-left')){$('body').toggleClass('is--pushed-left')}
 		$('body').toggleClass('is--pushed-right');
 		$('article #abstract .trigger').toggleClass('is--hidden');
-		$('#article_list').toggleClass('is--revealed');
 	});
 	$('.right-menu').click(function() {
 		$('.right-menu').toggleClass('trigger--active');
 		if ($('body').hasClass('is--pushed-right')){$('body').toggleClass('is--pushed-right')};
 		$('body').toggleClass('is--pushed-left');
-		$('#navigation_main').toggleClass('is--revealed');
-		$('#navigation_main').toggleClass('is--fadeable');
 	});
 
 	//

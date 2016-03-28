@@ -55,7 +55,7 @@
 			</div><!-- #article_body -->
 		</article>
 
-		<aside id="article_list" class="is--fadeable">
+		<aside id="article_list" class="">
 			<h1>More Articles</h1>
 			<div id="blog-list">
 

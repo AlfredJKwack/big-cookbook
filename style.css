@@ -33,12 +33,6 @@ Underscores is distributed under the terms of the GNU GPL v2 or later.
 }
 /* end: text which covers feature image */
 
-.right-menu span {
-	font-size: 2.4em;
-    float: left;
-/*     margin-top: -0.08em; */
-}
-
 /***
  *  Tools
  */
@@ -98,7 +92,7 @@ Underscores is distributed under the terms of the GNU GPL v2 or later.
 	width: 100%;
 	position: relative;
 	overflow: hidden;
-	background-color: #fff f;
+	background-color: #fff;
 	-webkit-transition-property: -webkit-transform;
 	-moz-transition-property: -moz-transform;
 	-ms-transition-property: -ms-transform;
@@ -123,6 +117,7 @@ Underscores is distributed under the terms of the GNU GPL v2 or later.
 	transition-duration: .5s;
 	transition-timing-function: cubic-bezier(.33,0,.2,1);
 	transition-delay: 0;
+	z-index: 10;
 }
 
 .site-brand-container {
@@ -403,6 +398,7 @@ Underscores is distributed under the terms of the GNU GPL v2 or later.
 	transition-duration: 0s;
 	transition-timing-function: ease-in;
 	transition-delay: .2s;
+	background-color: #a9a9a9;
 }
 
 .main > article > header > div.featured-img {
@@ -517,7 +513,8 @@ Underscores is distributed under the terms of the GNU GPL v2 or later.
 
 #abstract a.left-menu,
 #article_list a.left-menu,
-#article_body a.right-menu {
+#article_body a.right-menu,
+#navigation_main a.right-menu {
 	position: absolute;
 	top: 30px; /* offset from top */
 	right: 5%;
@@ -557,6 +554,17 @@ Underscores is distributed under the terms of the GNU GPL v2 or later.
 	transform: rotate(90deg);
 }
 
+#article_body a.right-menu span {
+	font-size: 2.4em;
+    float: left;
+}
+
+#navigation_main a.right-menu span {
+	font-family: 'Arial Rounded MT Bold','Helvetica Rounded',Arial,sans-serif;
+	margin: .5em 1em;
+    display: inline-block;
+}
+
 @media all and (max-width: 1023px) {
 	#abstract a.left-menu {
 		top: -170px;
@@ -585,11 +593,11 @@ Underscores is distributed under the terms of the GNU GPL v2 or later.
  */
 
 .is--pushed-right .site-brand-container {
-	-webkit-transform: translate3d(200%,0,0);
-	-moz-transform: translate3d(200%,0,0);
-	-ms-transform: translate3d(200%,0,0);
-	-o-transform: translate3d(200%,0,0);
-	transform: translate3d(200%,0,0);
+	-webkit-transform: translate3d(182.5%,0,0);
+	-moz-transform: translate3d(182.5%,0,0);
+	-ms-transform: translate3d(182.5%,0,0);
+	-o-transform: translate3d(182.5%,0,0);
+	transform: translate3d(182.5%,0,0); /*	317.5% is also fun	*/
 }
 .is--pushed-right .site-brand-container * {
     cursor: w-resize !important
@@ -714,7 +722,7 @@ Underscores is distributed under the terms of the GNU GPL v2 or later.
 	box-sizing: border-box;
 	background-color: #0c0c0c;
 	color: #ffffff;
-	padding: 0 40px;
+	padding: 40px 40px 60px 40px;
 	overflow-x: hidden;
 	overflow-y: scroll;
 	-moz-user-select: -moz-none;

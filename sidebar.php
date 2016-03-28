@@ -13,7 +13,7 @@ if ( ! is_active_sidebar( 'sidebar-1' ) ) {
 ?>
 
 
-        <nav id="navigation_main" role="navigation" class="is--fadeable">
+        <nav id="navigation_main" role="navigation" class="background--dark">
 			<?php dynamic_sidebar( 'sidebar-1' ); ?>
-            <a href="#" class="right-menu button trigger">close</a>
+            <a href="#" class="right-menu button trigger"><span>X</span></a>
         </nav>

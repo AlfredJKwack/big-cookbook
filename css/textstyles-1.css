@@ -36,6 +36,13 @@
 		text-rendering: optimizeLegibility;
 		font-family: 'Josefin Slab', serif;
 	}
+
+	#navigation_main {
+		font-family: 'Open Sans Condensed', sans-serif;
+	}
+	#navigation_main ul {
+		margin: 0px 0px 0px -1em;
+	}
 	
 /***
  * Headers	
@@ -119,12 +126,12 @@
  	}
  	a:not(.button) {
 		position: relative;
-		display: inline-block;
+	/*	display: inline-block;	*/
 		outline: none;
 		line-height: 1.35; /* must be .1 smaller than parent line height */
 		font-weight: 400;
 		vertical-align: bottom;
-		white-space: nowrap;
+	/*	white-space: nowrap;	*/
 		color: #404d5b;
 		border-bottom: 1px solid rgba(52,73,94,0.4);
 		-webkit-transition: background-color 0.3s, border-color 0.3s;
@@ -139,14 +146,14 @@
 		background-color: rgba(52,73,94,0.1);
 	}
 	/* deal with special cases */
-	div#meta.background--dark span > a {
+	.background--dark a {
     	color: white;
 	}
-	div#meta.background--light span > a: {
+	.background--light a {
     	color: black;
 	}
-	div#meta.background--dark span > a:hover, 
-	div#meta.background--dark span > a:focus {
+	.background--dark a:hover, 
+	.background--dark a:focus {
 		border-color: rgba(52,73,94,0);
 		background-color: rgba(102, 109, 116, 0.5);
 	}
