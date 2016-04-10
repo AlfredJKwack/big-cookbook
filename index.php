@@ -26,11 +26,30 @@ get_header(); ?>
 				 * If you want to override this in a child theme, then include a file
 				 * called content-___.php (where ___ is the Post Format name) and that will be used instead.
 				 */
-				get_template_part( 'template-parts/content', get_post_format() );
+
+				if ( $wp_query->current_post == 0 && !is_paged() ) : 
+					/* first post */
+					get_template_part( 'template-parts/content-article', get_post_format() );
+
+					?>
+					<aside id="article_list" class="">
+						<h1>More Articles</h1>
+						<div id="blog-list">
+					<?php
+
+				else :
+					/* not first post */
+					get_template_part( 'template-parts/content-thumb', get_post_format() );
+
+				endif;
 
 			endwhile;
 
-			the_posts_navigation();
+			?>
+						</div><!-- #blog-list -->
+					</aside><!-- #article_list -->
+			<?php			
+
 
 		else :
 
@@ -38,8 +57,7 @@ get_header(); ?>
 
 		endif; ?>
 					<a href="#" class="left-menu button trigger">close</a>
-				</div><!-- #blog-list -->
-			</aside><!-- #article_list -->
+
 		</div> <!-- #main -->
 	</div> <!-- #main-container -->
 

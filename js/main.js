@@ -7,7 +7,31 @@ function calcFocus(cropSize, imgSize) {
 	return focusPt;
 }
 
-jQuery(document).ready( function($) {
+//
+// jQuery Easing v1.3 - http://gsgd.co.uk/sandbox/jquery/easing/
+//
+jQuery.easing['jswing'] = jQuery.easing['swing'];
+
+jQuery.extend( jQuery.easing,
+{
+	def: 'easeOutQuad',
+	swing: function (x, t, b, c, d) {
+		//alert(jQuery.easing.default);
+		return jQuery.easing[jQuery.easing.def](x, t, b, c, d);
+	},
+	easeInQuad: function (x, t, b, c, d) {
+		return c*(t/=d)*t + b;
+	},
+	easeOutQuad: function (x, t, b, c, d) {
+		return -c *(t/=d)*(t-2) + b;
+	},
+	easeInOutQuad: function (x, t, b, c, d) {
+		if ((t/=d/2) < 1) return c/2*t*t + b;
+		return -c/2 * ((--t)*(t-2) - 1) + b;
+	}
+});
+
+jQuery(document).ready( function($) {	
 
 	// menu handling
 	$('.left-menu').click(function() {
@@ -32,11 +56,11 @@ jQuery(document).ready( function($) {
 
 
 		// Set background of image to dominant image color
-		var colorThief = new ColorThief();
-		var color = colorThief.getColor($theImage);
-		var rgbValue = 'rgb('+color.join()+')';
-		var rgbaValue = 'rgba('+color.join()+',0.2)';
-		$('div.featured-img').css('background-color', rgbValue);
+		//var colorThief = new ColorThief();
+		//var color = colorThief.getColor($theImage);
+		//var rgbValue = 'rgb('+color.join()+')';
+		//var rgbaValue = 'rgba('+color.join()+',0.2)';
+		//$('div.featured-img').css('background-color', rgbValue);
 		//$('#abstract').css('background-color', rgbaValue);
 		
 		
@@ -74,7 +98,7 @@ jQuery(document).ready( function($) {
 		});		
 		
 		// make the image appear
-		$($theImage).removeClass('is--invisible').hide().fadeIn(800, 'easeOutQuad');	
+		$($theImage).removeClass('is--invisible').hide().fadeIn(1800, 'easeInOutQuad');	
 		
 	}).attr('src', $theImage.src);
 	

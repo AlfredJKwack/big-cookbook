@@ -16,9 +16,11 @@
 function big_cookbook_jetpack_setup() {
 	// Add theme support for Infinite Scroll.
 	add_theme_support( 'infinite-scroll', array(
-		'container' => 'main',
+		'container' => 'blog-list"',
 		'render'    => 'big_cookbook_infinite_scroll_render',
-		'footer'    => 'page',
+		'footer'    => false,
+		'type'      => 'scroll',
+		'wrapper'	=> false
 	) );
 
 	// Add theme support for Responsive Videos.
@@ -35,7 +37,7 @@ function big_cookbook_infinite_scroll_render() {
 		if ( is_search() ) :
 		    get_template_part( 'template-parts/content', 'search' );
 		else :
-		    get_template_part( 'template-parts/content', get_post_format() );
+		    get_template_part( 'template-parts/content-thumb', get_post_format() );
 		endif;
 	}
 }
