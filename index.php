@@ -27,7 +27,10 @@ get_header(); ?>
 				 * called content-___.php (where ___ is the Post Format name) and that will be used instead.
 				 */
 
-				if ( $wp_query->current_post == 0 && !is_paged() ) : 
+				/*
+				if ( $wp_query->current_post == 0 && !is_paged() ) :  
+				*/
+				if ( $wp_query->current_post == 0) : 
 					/* first post */
 					get_template_part( 'template-parts/content-article', get_post_format() );
 
@@ -46,6 +49,7 @@ get_header(); ?>
 			endwhile;
 
 			?>
+							<a href="#" class="left-menu button trigger">close</a>		
 						</div><!-- #blog-list -->
 					</aside><!-- #article_list -->
 			<?php			
@@ -56,7 +60,7 @@ get_header(); ?>
 			get_template_part( 'template-parts/content', 'none' );
 
 		endif; ?>
-					<a href="#" class="left-menu button trigger">close</a>
+					
 
 		</div> <!-- #main -->
 	</div> <!-- #main-container -->
