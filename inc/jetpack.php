@@ -19,7 +19,7 @@ function big_cookbook_jetpack_setup() {
 		'container' => 'blog-list"',
 		'render'    => 'big_cookbook_infinite_scroll_render',
 		'footer'    => false,
-		'type'      => 'scroll',
+		'type'      => 'click',
 		'wrapper'	=> false
 	) );
 
