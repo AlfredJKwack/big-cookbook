@@ -48,6 +48,15 @@
 						) );
 					?>					
 				</section>
+				<section>
+					<?php 
+					// If comments are open or we have at least one comment, load up the comment template.
+					global $withcomments; $withcomments = 1; 
+					//if ( comments_open() || get_comments_number() ) :
+						comments_template();
+					//endif;
+					?>					
+				</section>
 				<footer class="entry-footer">
 					<?php big_cookbook_entry_footer(); ?>
 				</footer><!-- .entry-footer -->				
