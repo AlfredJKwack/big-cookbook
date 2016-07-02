@@ -9,26 +9,42 @@
 
 get_header(); ?>
 
-	<div id="primary" class="content-area">
-		<main id="main" class="site-main" role="main">
 
 		<?php
+
+		/* Start the Loop */
 		while ( have_posts() ) : the_post();
 
-			get_template_part( 'template-parts/content', get_post_format() );
+			/* display the post post */
+			get_template_part( 'template-parts/content-article', get_post_format() );
 
-			the_post_navigation();
+			?>
+			<aside id="article_list" class="">
+				<h1>More Articles</h1>
+				<div id="blog-list">
+			<?php
 
-			// If comments are open or we have at least one comment, load up the comment template.
-			if ( comments_open() || get_comments_number() ) :
-				comments_template();
-			endif;
+			/* put something in the article list */
 
-		endwhile; // End of the loop.
+			$archive_args = array(
+				'type'            => 'monthly',
+				'limit'           => '',
+				'format'          => 'html', 
+				'before'          => '',
+				'after'           => '',
+				'show_post_count' => false,
+				'echo'            => 1,
+				'order'           => 'DESC'
+			);
+			wp_get_archives( $archive_args );
+
+		endwhile;
 		?>
-
-		</main><!-- #main -->
-	</div><!-- #primary -->
+						<a href="#" class="left-menu button trigger">close</a>		
+					</div><!-- #blog-list -->
+				</aside><!-- #article_list -->
+		</div> <!-- #main -->
+	</div> <!-- #main-container -->
 
 <?php
 get_sidebar();
