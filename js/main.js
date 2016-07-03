@@ -48,6 +48,7 @@ jQuery(document).ready( function($) {
 			$('body').toggleClass('is--pushed-left');
 		})
 	};
+
 	// Handler for the featured image eye candy
 	var setFeaturedImgCandy = function(selector){
 
@@ -139,6 +140,9 @@ jQuery(document).ready( function($) {
             	$('article #abstract .trigger').toggleClass('is--hidden');
 
             	setFeaturedImgCandy('div.featured-img.focuspoint img');
+            	setTimeout(function() {
+				    $('#blog-list .left-menu').trigger('click');
+				}, 500);
             }
         });
         return false;
