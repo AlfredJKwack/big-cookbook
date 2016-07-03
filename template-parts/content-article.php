@@ -33,7 +33,7 @@
 				</div>
 			</header><!-- .entry-header -->
 			<div id="article_body">
-				<a id="" href="#" class="right-menu button trigger"><span>&equiv;</span></a>
+				<a id="" href="javascript:void(0)" class="right-menu button trigger"><span>&equiv;</span></a>
 				<section>
 					<?php
 						the_content( sprintf(
