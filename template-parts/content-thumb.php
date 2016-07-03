@@ -11,10 +11,13 @@
 
 		<div class="col col--6">
 
-			<?php 
-			$entry_permalink = '<a href="%1$s" class="list-item list-item--stacked">';
+			<?php
+			$postid = get_the_ID();
+			$entry_permalink = '<a href="%1$s" id="post-%2$s" class="list-item list-item--stacked ajax-load-article">';
+			
 			$entry_permalink = sprintf( $entry_permalink,
-				esc_url( get_permalink() )
+				esc_url( get_permalink() ), 
+				$postid
 			);
 
 			echo $entry_permalink;

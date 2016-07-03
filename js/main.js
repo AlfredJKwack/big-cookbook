@@ -33,78 +33,122 @@ jQuery.extend( jQuery.easing,
 
 jQuery(document).ready( function($) {	
 
-	// menu handling
-	$('.left-menu').click(function() {
-		if ($('body').hasClass('is--pushed-left')){$('body').toggleClass('is--pushed-left')}
-		$('body').toggleClass('is--pushed-right');
-		$('article #abstract .trigger').toggleClass('is--hidden');
-	});
-	$('.right-menu').click(function() {
-		$('.right-menu').toggleClass('trigger--active');
-		if ($('body').hasClass('is--pushed-right')){$('body').toggleClass('is--pushed-right')};
-		$('body').toggleClass('is--pushed-left');
-	});
+	// Handlers for menu buttons
+	var setLeftMenuEvents = function(selector){
+		$(selector).click(function() {
+			if ($('body').hasClass('is--pushed-left')){$('body').toggleClass('is--pushed-left')}
+			$('body').toggleClass('is--pushed-right');
+			$('article #abstract .trigger').toggleClass('is--hidden');
+		});
+	};
+	var setRightMenuEvents = function(selector){
+		$(selector).click(function() {
+			$('.right-menu').toggleClass('trigger--active');
+			if ($('body').hasClass('is--pushed-right')){$('body').toggleClass('is--pushed-right')};
+			$('body').toggleClass('is--pushed-left');
+		})
+	};
+	// Handler for the featured image eye candy
+	var setFeaturedImgCandy = function(selector){
 
-	//
-	// Handle the featured image eye candy
-	//
-	//
+		if ( $(selector).length ) { //check is something was passed in.
 
-	if ( $('div.featured-img.focuspoint img').length ) { //check for featured image.
-
-		var $theImage = $('div.featured-img.focuspoint img')[0]
- 
-		// fire when image has loaded
-		$('<img />').one('load', function() {
+			var $theImage = $(selector)[0]
+	 
+			// fire when image has loaded
+			$('<img />').one('load', function() {
 
 
-			// Set background of image to dominant image color
-			//var colorThief = new ColorThief();
-			//var color = colorThief.getColor($theImage);
-			//var rgbValue = 'rgb('+color.join()+')';
-			//var rgbaValue = 'rgba('+color.join()+',0.2)';
-			//$('div.featured-img').css('background-color', rgbValue);
-			//$('#abstract').css('background-color', rgbaValue);
-			
-			
-			//'this' references to the newly created <img />
-			var imgData = {
-				w: this.width,
-				h: this.height			
-			};
+				// Set background of image to dominant image color
+				// you actually want this to be server side...
 
-			// get an appropriate crop window
-			var cropData = SmartCrop.crop(this, {
-					width: 250,		// keeping this slightly smaller than min-height
-					height: 250,
-					minScale: 0.9
-				}, function(result) {
-					return result;
-				}
-			);
-			
-			// get and set a focus point
-			var focusPoint = calcFocus(cropData.topCrop, imgData);
-			$('div.featured-img.focuspoint').attr({
-				"data-focus-x": focusPoint.x,
-				"data-focus-y": focusPoint.y,
-				"data-focus-w": imgData.w,
-				"data-focus-h": imgData.h
-			});
-			$('.focuspoint').focusPoint();
-			
-			// set the text color based on the feature image background
-			BackgroundCheck.init({
-				minComplexity: 16,
-				targets: '#abstract h1, #meta, #brand-link',
-				images: $theImage
-			});		
-			
-			// make the image appear
-			$($theImage).removeClass('is--invisible').hide().fadeIn(1800, 'easeInOutQuad');	
-			
-		}).attr('src', $theImage.src);    	
- 
-	}
+				//var colorThief = new ColorThief();
+				//var color = colorThief.getColor($theImage);
+				//var rgbValue = 'rgb('+color.join()+')';
+				//var rgbaValue = 'rgba('+color.join()+',0.2)';
+				//$('div.featured-img').css('background-color', rgbValue);
+				//$('#abstract').css('background-color', rgbaValue);
+				
+				
+				//'this' references to the newly created <img />
+				var imgData = {
+					w: this.width,
+					h: this.height			
+				};
+
+				// get an appropriate crop window
+				var cropData = SmartCrop.crop(this, {
+						width: 250,		// keeping this slightly smaller than min-height
+						height: 250,
+						minScale: 0.9
+					}, function(result) {
+						return result;
+					}
+				);
+				
+				// get and set a focus point
+				var focusPoint = calcFocus(cropData.topCrop, imgData);
+				$($theImage).parent().attr({
+					"data-focus-x": focusPoint.x,
+					"data-focus-y": focusPoint.y,
+					"data-focus-w": imgData.w,
+					"data-focus-h": imgData.h
+				});
+				$($theImage).parent().focusPoint();
+				
+				// set the text color based on the feature image background
+				BackgroundCheck.init({
+					minComplexity: 16,
+					targets: '#abstract h1, #meta, #brand-link', //can't abstract this?
+					images: $theImage
+				});		
+				
+				// make the image appear
+				$($theImage).removeClass('is--invisible').hide().fadeIn(1800, 'easeInOutQuad');	
+				
+			}).attr('src', $theImage.src);    	
+	 
+		} //if ( $(this).length )
+	};
+
+	// ajax loading of articles
+	$('a.ajax-load-article').click(function(){
+
+		var post_id = $(this).attr('id').slice(5);
+		var article_waiting = '';
+
+        jQuery.ajax({
+            type: 'POST',
+            url: ajaxurl,
+            data: {"action": "load_single_article", post_id: post_id},
+            beforeSend: function() {
+            	$('.main.wrapper > article > header .featured-img').remove();
+            	$('.main.wrapper > article > header #meta').remove();
+            	$('.main.wrapper > article #article_body section').remove();
+            	$('.main.wrapper > article #article_body footer').remove();
+
+            	$('.main.wrapper > article > header h1').text('Loading article');
+            	$('.main.wrapper > article #article_body').prepend('Please hold while we load the content');
+            },
+            success: function(response){
+            	$('.main.wrapper > article').remove();
+            	$('.main.wrapper').prepend(response);
+
+            	setLeftMenuEvents('.main.wrapper > article .left-menu');
+            	setRightMenuEvents('#article_body .right-menu');
+            	$('article #abstract .trigger').toggleClass('is--hidden');
+
+            	setFeaturedImgCandy('div.featured-img.focuspoint img');
+            }
+        });
+        return false;
+    });
+
+	//set up the menu handlers
+	setLeftMenuEvents('.left-menu');
+	setRightMenuEvents('.right-menu');
 	
+	//set up the featured image
+    setFeaturedImgCandy('div.featured-img.focuspoint img');
+
 });

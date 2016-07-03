@@ -147,6 +147,45 @@ function big_cookbook_scripts() {
 }
 add_action( 'wp_enqueue_scripts', 'big_cookbook_scripts' );
 
+/**
+ * Set a javascript variable indicating where the ajax calls should go
+ */
+function add_ajaxurl_cdata_to_front(){ ?>
+    <script type="text/javascript"> //<![CDATA[
+        ajaxurl = '<?php echo admin_url( 'admin-ajax.php'); ?>';
+    //]]> </script>
+<?php }
+add_action( 'wp_head', 'add_ajaxurl_cdata_to_front', 1);
+
+
+/**
+ * Load single articles through ajax calls
+ */
+function load_single_article(){
+    //
+    global $post; //since setup_postdata needs this
+	$post_id = $_POST[ 'post_id' ];
+    $post = get_post( $post_id, OBJECT); 
+
+    ob_start(); //start caputring output 
+
+    if( !$post || ( get_post_status ( $post_id ) == 'private' ) ) { 
+        get_template_part( 'template-parts/content', 'none' );
+    }
+    else {
+    	setup_postdata( $post );
+		get_template_part( 'template-parts/content-article', get_post_format() );
+		wp_reset_postdata();
+    }
+
+	$content = ob_get_clean();
+	echo $content;   
+
+    die();
+}
+add_action( 'wp_ajax_load_single_article', 'load_single_article' );
+add_action( 'wp_ajax_nopriv_load_single_article', 'load_single_article' );
+
 
 /**
  * Change the excerpt length to something suitable for this theme
