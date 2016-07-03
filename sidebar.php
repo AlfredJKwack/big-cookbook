@@ -15,5 +15,5 @@ if ( ! is_active_sidebar( 'sidebar-1' ) ) {
 
         <nav id="navigation_main" role="navigation" class="background--dark">
 			<?php dynamic_sidebar( 'sidebar-1' ); ?>
-            <a href="#" class="right-menu button trigger"><span>X</span></a>
+            <a href="javascript:void(0)" class="right-menu button trigger"><span>X</span></a>
         </nav>
