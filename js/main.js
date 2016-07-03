@@ -133,23 +133,19 @@ jQuery(document).ready( function($) {
 
             	setLeftMenuEvents('.main.wrapper > article .left-menu');
             	setRightMenuEvents('#article_body .right-menu');
-            	$('article #abstract .trigger').toggleClass('is--hidden');
 
             	setFeaturedImgCandy('div.featured-img.focuspoint img');
-            	setTimeout(function() {
-				    $('#blog-list .left-menu').trigger('click');
-				}, 500);
             }
         });
 	};
 
+	// Handles browswer history actions back|forward
 	window.addEventListener('popstate', function(e){
-		console.log('popstate event: ');
-		console.log(e.state);
-		//console.log('popstate event: ' + e.state.post_id);
-
 		if (e.state != null) {
-			console.log(e.state['post']);
+			//close any open menus
+			if ($('body').hasClass('is--pushed-right')){$('#blog-list .left-menu').trigger('click')};
+			if ($('body').hasClass('is--pushed-left')){$('#article_body .right-menu').trigger('click')};
+
 			loadArticle(e.state['post']);
 			document.title = e.state['title'] + " | " + window.location.hostname;
 		} 
@@ -180,6 +176,10 @@ jQuery(document).ready( function($) {
 			);
 
 			loadArticle(post_id);
+        	setTimeout(function() {
+			    $('#blog-list .left-menu').trigger('click');
+			    $('article #abstract .trigger').toggleClass('is--hidden');
+			}, 500);			
 			document.title = document.title = post_title + " | " + window.location.hostname;;
 
 			e.stopPropagation();
