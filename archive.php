@@ -47,7 +47,7 @@ get_header(); ?>
 			endwhile;
 
 			?>
-							<a href="#" class="left-menu button trigger">close</a>		
+							<a href="javascript:void(0)" class="left-menu button trigger">close</a>		
 						</div><!-- #blog-list -->
 					</aside><!-- #article_list -->
 			<?php			
