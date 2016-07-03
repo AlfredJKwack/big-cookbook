@@ -30,7 +30,7 @@
 						</div><!-- #meta -->
 					<?php
 					endif; ?>
-					<a href="#" class="left-menu button trigger"><span>Left Menu</span></a>
+					<a href="javascript:void(0)" class="left-menu button trigger"><span>Left Menu</span></a>
 				</div>
 			</header><!-- .entry-header -->
 			<div id="article_body">

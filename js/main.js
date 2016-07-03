@@ -110,14 +110,10 @@ jQuery(document).ready( function($) {
 			}).attr('src', $theImage.src);    	
 	 
 		} //if ( $(this).length )
-	};
+	};	
 
-	// ajax loading of articles
-	$('a.ajax-load-article').click(function(){
-
-		var post_id = $(this).attr('id').slice(5);
-		var article_waiting = '';
-
+	// Gets a given article and updates the page part
+	var loadArticle = function(post_id){
         jQuery.ajax({
             type: 'POST',
             url: ajaxurl,
@@ -145,7 +141,50 @@ jQuery(document).ready( function($) {
 				}, 500);
             }
         });
-        return false;
+	};
+
+	window.addEventListener('popstate', function(e){
+		console.log('popstate event: ');
+		console.log(e.state);
+		//console.log('popstate event: ' + e.state.post_id);
+
+		if (e.state != null) {
+			console.log(e.state['post']);
+			loadArticle(e.state['post']);
+			document.title = e.state['title'] + " | " + window.location.hostname;
+		} 
+	})
+
+	// Set event handler to load articles
+	$('a.ajax-load-article').click(function(e){
+
+		if (event.metaKey || event.ctrlKey) {  // allow people to follow cmd/ctrl clicks
+		    return true;
+
+		} else { // it's a normal click
+
+			e.preventDefault();
+
+			var post_id = $(this).attr('id').slice(5);
+			var post_title = $(this).find('h1').first().text();
+			var defaultTitle = document.title;
+
+			// set browser history
+			history.pushState( 
+				{
+					title: post_title,
+					post: post_id
+				}, 
+				null, 
+				$(this).attr('href')
+			);
+
+			loadArticle(post_id);
+			document.title = document.title = post_title + " | " + window.location.hostname;;
+
+			e.stopPropagation();
+
+		}
     });
 
 	//set up the menu handlers
