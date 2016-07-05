@@ -24,6 +24,11 @@ function big_cookbook_body_classes( $classes ) {
 		$classes[] = 'hfeed';
 	}
 
+	// Adds a class of is--pushed-right to archives and categories
+	if ( is_archive() OR is_category() ) {
+		$classes[] = 'is--pushed-right';
+	}
+
 	return $classes;
 }
 add_filter( 'body_class', 'big_cookbook_body_classes' );

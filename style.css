@@ -652,6 +652,10 @@ Underscores is distributed under the terms of the GNU GPL v2 or later.
     opacity: 0
 }
 
+body.is--pushed-right #abstract .trigger {
+	display: none;
+}
+
 @media all and (max-width: 1023px) {
     body:not(.is--pushed-right) #layout:not(.full-screen-main-image) .content {
         height: auto !important

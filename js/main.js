@@ -38,7 +38,6 @@ jQuery(document).ready( function($) {
 		$(selector).click(function() {
 			if ($('body').hasClass('is--pushed-left')){$('body').toggleClass('is--pushed-left')}
 			$('body').toggleClass('is--pushed-right');
-			$('article #abstract .trigger').toggleClass('is--hidden');
 		});
 	};
 	var setRightMenuEvents = function(selector){
@@ -163,7 +162,6 @@ jQuery(document).ready( function($) {
 
 			var post_id = $(this).attr('id').slice(5);
 			var post_title = $(this).find('h1').first().text();
-			var defaultTitle = document.title;
 
 			// set browser history
 			history.pushState( 
@@ -178,7 +176,6 @@ jQuery(document).ready( function($) {
 			loadArticle(post_id);
         	setTimeout(function() {
 			    $('#blog-list .left-menu').trigger('click');
-			    $('article #abstract .trigger').toggleClass('is--hidden');
 			}, 500);			
 			document.title = document.title = post_title + " | " + window.location.hostname;;
 
