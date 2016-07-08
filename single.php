@@ -20,6 +20,7 @@ get_header(); ?>
 
 			?>
 			<aside id="article_list" class="">
+				<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'primary-menu' ) ); ?>
 				<h1>More Articles</h1>
 				<div id="blog-list">
 			<?php
