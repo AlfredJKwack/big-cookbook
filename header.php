@@ -2,7 +2,7 @@
 /**
  * The header for our theme.
  *
- * This is the template that displays all of the <head> section and everything up until <div id="content">
+ * This is the template that displays all of the <head> section and everything up until <article id="post-xxxx">
  *
  * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
  *
@@ -26,7 +26,7 @@
 
 <body <?php body_class(); ?>>
 
-	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'big-cookbook' ); ?></a>
+	<a class="skip-link screen-reader-text" href="#article_body"><?php esc_html_e( 'Skip to content', 'big-cookbook' ); ?></a>
 	<div class="main-container">
 		<div class="site-brand-container">
 			<header id="brand-wrapper" class="wrapper clearfix">
