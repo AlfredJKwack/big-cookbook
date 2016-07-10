@@ -181,7 +181,6 @@ Underscores is distributed under the terms of the GNU GPL v2 or later.
 }
 #article_list > :first-child { 
 	margin: 30px 4.5% 2em;  /* left-right same as above */
-	line-height: 50px; /* Same as button */
 }
 #article_list > #blog-list {
 	margin: 0 2.5%; /* smaller because blog-list has lost of negative margins */
@@ -786,8 +785,9 @@ body.is--pushed-right #abstract .trigger.more {
 #primary-menu li a {
 	padding: 0.2em 0.4em;
 	border-bottom: 0px;
+	line-height: 50px;
 }
-#primary-menu li a:first-of-type {
+#primary-menu li:first-of-type a {
 	margin-left: -0.4em; 
 }
 
