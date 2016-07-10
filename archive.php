@@ -24,7 +24,7 @@ get_header(); ?>
 					<aside id="article_list" class="">
 
 						<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'primary-menu' ) ); ?>
-						
+
 						<?php
 							the_archive_title( '<h1 class="page-title">', '</h1>' );
 							the_archive_description( '<div class="taxonomy-description">', '</div>' );
@@ -42,7 +42,6 @@ get_header(); ?>
 			endwhile;
 
 			?>
-							<a href="javascript:void(0)" class="left-menu button trigger">close</a>		
 						</div><!-- #blog-list -->
 					</aside><!-- #article_list -->
 			<?php			

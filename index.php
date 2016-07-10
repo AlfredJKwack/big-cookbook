@@ -30,7 +30,7 @@ get_header(); ?>
 					<aside id="article_list" class="">
 
 						<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'primary-menu' ) ); ?>
-												
+
 						<h1>More Articles</h1>
 						<div id="blog-list">
 					<?php
@@ -43,8 +43,7 @@ get_header(); ?>
 
 			endwhile;
 
-			?>
-							<a href="javascript:void(0)" class="left-menu button trigger">close</a>		
+			?>	
 						</div><!-- #blog-list -->
 					</aside><!-- #article_list -->
 			<?php			

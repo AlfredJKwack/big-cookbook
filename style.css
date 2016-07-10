@@ -508,8 +508,7 @@ Underscores is distributed under the terms of the GNU GPL v2 or later.
 /***
  *  Panel buttons
  */
-#abstract a.left-menu,
-#article_list a.left-menu {
+a.left-menu {
     -webkit-transition: all 0.25s ease-out;
     -moz-transition: all 0.25s ease-out;
     transition: all 0.25s ease-out;
@@ -518,36 +517,35 @@ Underscores is distributed under the terms of the GNU GPL v2 or later.
 	line-height: 50px;	
 }
 
-#abstract a.left-menu,
-#article_list a.left-menu,
-#article_body a.right-menu,
-#navigation_main a.right-menu {
+a.left-menu,
+a.right-menu {
 	position: absolute;
 	top: 30px; /* offset from top */
+}
+a.left-menu.more,
+a.right-menu {
 	right: 5%;
 }
+a.left-menu.less {
+	left: 5%;
+}
 
-#article_list a.left-menu,
-#article_body a.right-menu {
+a.right-menu {
 	background: rgba(235,235,235,0.1);
 	color: #000000;
 }
 
-#abstract a.left-menu {
+a.left-menu {
 	background: rgba(255,255,255,0.1);
 	color: #ffffff;
 	border: 0px;
 }
 
-#abstract a.left-menu:hover {
+a.left-menu:hover {
     background-color: rgba(255,255,255,0.2);
     box-shadow: inset 0 0 10px rgba(255,255,255,0.1);	
 }
 
-#article_list a.left-menu:hover {
-    background-color: rgba(200,200,200,0.2);
-    box-shadow: inset 0 0 10px rgba(235,235,235,0.1);	
-}
 
 #article_body a.right-menu {
 	padding: 0 0.2em 0.4em;
@@ -570,6 +568,15 @@ Underscores is distributed under the terms of the GNU GPL v2 or later.
 	font-family: 'Arial Rounded MT Bold','Helvetica Rounded',Arial,sans-serif;
 	margin: .5em 1em;
     display: inline-block;
+}
+body #abstract .trigger.less {
+	display: none;
+}
+body.is--pushed-right #abstract .trigger.less {
+	display: block;
+}
+body.is--pushed-right #abstract .trigger.more {
+	display: none;
 }
 
 @media all and (max-width: 1023px) {
@@ -660,10 +667,6 @@ Underscores is distributed under the terms of the GNU GPL v2 or later.
 
 .is--pushed-right .header .abstract-bottom .line-bottom {
     opacity: 0
-}
-
-body.is--pushed-right #abstract .trigger {
-	display: none;
 }
 
 @media all and (max-width: 1023px) {
