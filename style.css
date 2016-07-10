@@ -168,7 +168,7 @@ Underscores is distributed under the terms of the GNU GPL v2 or later.
 
 #article_list {
 	width: 50%;
-/*	padding: 30px 2.5%; */
+	padding: 30px 2.5% 2em;
 	position: absolute;
 	background-color: #ededed;
 	overflow-x: hidden;
@@ -176,15 +176,9 @@ Underscores is distributed under the terms of the GNU GPL v2 or later.
 	top: 0;
 	bottom: 0;
 }
-#article_list > :first-child { 
-	margin: 30px 5% 2em; /* ISSUE: Maintainability symptom. */
+#article_list > :first-child a { 
 	line-height: 50px; /* Same as button */
 }
-
-#article_list > #blog-list {
-	margin: 0 3%;
-}
-
 #article_list > #blog-list .list-item {
     width: 100%;
     height: 210px;
@@ -513,7 +507,7 @@ a.left-menu {
     -moz-transition: all 0.25s ease-out;
     transition: all 0.25s ease-out;
     text-decoration: none;  
-	padding: 0 71px;
+	padding: 0 2em;
 	line-height: 50px;	
 }
 
