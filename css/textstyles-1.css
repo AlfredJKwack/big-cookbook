@@ -157,7 +157,25 @@
 		border-color: rgba(52,73,94,0);
 		background-color: rgba(102, 109, 116, 0.5);
 	}
-
+	#primary-menu {
+		font-family: 'Open Sans Condensed', sans-serif;
+	}
+	#primary-menu li a {
+		color: #999;
+	}	
+	#primary-menu li a:hover,
+	#primary-menu li a:focus {
+		border-color: rgba(52,73,94,0);
+		background-color: rgba(102, 109, 116, 0.5);
+		color: #fff;	
+	}
+	#primary-menu li.current-menu-item a {
+		color: #404d5b;
+	}
+	#primary-menu li.current-menu-item a:hover,
+	#primary-menu li.current-menu-item a:focus {
+		background-color: rgba(102, 109, 116, 0.1);
+	}		
 /***
  * lists	
  */

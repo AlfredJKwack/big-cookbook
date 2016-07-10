@@ -176,8 +176,8 @@ Underscores is distributed under the terms of the GNU GPL v2 or later.
 	top: 0;
 	bottom: 0;
 }
-#article_list > :first-child {
-	margin: 30px 5% 2em;
+#article_list > :first-child { 
+	margin: 30px 5% 2em; /* ISSUE: Maintainability symptom. */
 	line-height: 50px; /* Same as button */
 }
 
@@ -599,12 +599,22 @@ Underscores is distributed under the terms of the GNU GPL v2 or later.
  *  Push Content Right
  */
 
+/* 317.5% is also fun
 .is--pushed-right .site-brand-container {
 	-webkit-transform: translate3d(182.5%,0,0);
 	-moz-transform: translate3d(182.5%,0,0);
 	-ms-transform: translate3d(182.5%,0,0);
 	-o-transform: translate3d(182.5%,0,0);
-	transform: translate3d(182.5%,0,0); /*	317.5% is also fun	*/
+	transform: translate3d(182.5%,0,0); 
+}
+*/
+/* 182.5% is the alternative */
+.is--pushed-right .site-brand-container {
+	-webkit-transform: translate3d(317.5%,0,0);
+	-moz-transform: translate3d(317.5%,0,0);
+	-ms-transform: translate3d(317.5%,0,0);
+	-o-transform: translate3d(317.5%,0,0);
+	transform: translate3d(317.5%,0,0); 
 }
 .is--pushed-right .site-brand-container * {
     cursor: w-resize !important
@@ -746,6 +756,31 @@ body.is--pushed-right #abstract .trigger {
 
 #navigation_main.is--invisible {
 	display: none;
+}
+/*** END - Main Navigation ***/
+
+
+/***
+ * Primary Menu
+ */
+#primary-menu {
+	margin: 0; 
+	padding: 0; 
+	list-style-type: none; 
+	list-style-image: none; 
+} 
+#primary-menu li {
+	display: inline; 
+}
+#primary-menu li.current-menu-item {
+
+}
+#primary-menu li:first-child{
+	padding-left: 0px;
+}
+#primary-menu li a {
+	padding: 0.2em 0.4em;
+	border-bottom: 0px;
 }
 
 /*** END - Main Navigation ***/
