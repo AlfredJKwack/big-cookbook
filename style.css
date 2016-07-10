@@ -180,7 +180,7 @@ Underscores is distributed under the terms of the GNU GPL v2 or later.
 	margin: 0 4.5%;
 }
 #article_list > :first-child { 
-	margin: 30px 4.5% 2em;  /* left-right same as above */
+	margin: 30px 4.5% 1em;  /* left-right same as above */
 }
 #article_list > #blog-list {
 	margin: 0 2.5%; /* smaller because blog-list has lost of negative margins */
