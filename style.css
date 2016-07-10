@@ -177,7 +177,7 @@ Underscores is distributed under the terms of the GNU GPL v2 or later.
 	bottom: 0;
 }
 #article_list > * { 
-	margin: 0 4.5%;
+	margin: 2em 4.5% 1em;
 }
 #article_list > :first-child { 
 	margin: 30px 4.5% 1em;  /* left-right same as above */
