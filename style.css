@@ -489,19 +489,26 @@ Underscores is distributed under the terms of the GNU GPL v2 or later.
 }
 
 #article_body img.alignnone {
-    width: 100%;
-    height: 100%;
+    width: 95%;
+    height: 95%;
+    padding: 2.5%;
+    background: #f6f6f6;
+}
+
+#article_body footer.entry-footer {
+    margin: 2em -5.5%;
+    padding: 1em 5.5%;
+    background: #f6f6f6;
+}
+#article_body footer.entry-footer .cat-links {
+
+}
+#article_body footer.entry-footer .tags-links {
+
 }
 
 .main > article > footer {
 	padding-bottom: 180px;
-}
-
-.comments-area {
-	background-color: black;
-    color: white;
-    margin: 20px -6%;
-    padding: 5%;
 }
 
 
@@ -792,6 +799,175 @@ body.is--pushed-right #abstract .trigger.more {
 }
 
 /*** END - Main Navigation ***/
+
+/***
+ *  Comments
+ */
+
+h2.comments-title {
+	line-height: 2.6rem;
+    margin: 1em -5.5% 0 -5.5%;
+    padding: 1em 5.5% 1em 4.5%;
+    background: #f6f6f6;
+}
+
+ol.comment-list li::before {
+	/* cancel previous styling */
+    content:none;
+}
+
+ol.comment-list {
+	list-style: none;
+	margin: 0 0 1em;
+	padding: 0;
+	text-indent: 0;
+}
+ol.comment-list li {
+}
+ol.comment-list li.alt {
+}
+ol.comment-list li.comment {
+    border-bottom: 1px dotted #666;
+    padding: 1em 1em 0.2em 1em;
+    margin-bottom: 1.5em;
+}
+ol.comment-list li.bypostauthor {
+
+}
+ol.comment-list li.byuser {
+}
+ol.comment-list li.comment-author-admin {
+}
+ol.comment-list li.comment article.comment-body{
+	padding-bottom: 0.5em;
+}
+ol.comment-list li.comment div.comment-author {
+}
+ol.comment-list li.comment div.vcard {
+	/*
+	font: normal 16px georgia, times, serif;
+	*/
+}
+ol.comment-list li.comment div.vcard cite.fn {
+	font-style: normal;
+}
+ol.comment-list li.comment div.vcard cite.fn a.url {
+}
+ol.comment-list li.comment div.vcard img.avatar {
+	border: 5px solid #ccc;
+	float: right;
+	margin: 0 0 1em 1em;
+}
+ol.comment-list li.comment div.vcard img.avatar-32 {
+}
+ol.comment-list li.comment div.vcard img.photo {
+}
+ol.comment-list li.comment div.vcard span.says {
+}
+ol.comment-list li.comment footer.comment-meta {
+	padding-bottom: 1em;
+}
+ol.comment-list li.comment footer.comment-meta a {
+	/*color: #ccc;*/
+}
+ol.comment-list li.comment div.comment-metadata {
+	font-size: 1.5rem;
+}
+ol.comment-list li.comment p {
+	/*font-size: 11px;*/
+	margin: 0 0 1em;
+}
+ol.comment-list li.comment ul {
+	/*font-size: 11px;*/
+	list-style: square;
+	margin: 0 0 1em 2em;
+}
+ol.comment-list li.comment div.reply {
+	font-size: 1.5rem;
+}
+ol.comment-list li.comment div.reply a {
+	font-weight: bold;
+}
+ol.comment-list li.comment ol.children {
+	list-style: none;
+	margin: 1em 0 0 -1em;
+	text-indent: 0;
+	padding: 0 0 0 0.7em;
+}
+ol.comment-list li.comment ol.children li {
+}
+ol.comment-list li.comment ol.children li.alt {
+}
+ol.comment-list li.comment ol.children li.bypostauthor {
+}
+ol.comment-list li.comment ol.children li.byuser {
+}
+ol.comment-list li.comment ol.children li.comment {
+}
+ol.comment-list li.comment ol.children li.comment-author-admin {
+}
+ol.comment-list li.comment ol.children li.depth-2 {
+	border-left: 5px solid #555;
+	margin: 0 0 .25em .25em;
+}
+ol.comment-list li.comment ol.children li.depth-3 {
+	border-left: 5px solid #999;
+	margin: 0 0 .25em .25em;
+}
+ol.comment-list li.comment ol.children li.depth-4 {
+	border-left: 5px solid #bbb;
+	margin: 0 0 .25em .25em;
+}
+ol.comment-list li.comment ol.children li.depth-5 {
+}
+ol.comment-list li.comment ol.children li.odd {
+}
+ol.comment-list li.even {
+	background: #fff;
+}
+ol.comment-list li.odd {
+	background: #f6f6f6;
+}
+ol.comment-list li.parent {
+	border-left: 5px solid #903;
+}
+ol.comment-list li.thread-alt {
+}
+ol.comment-list li.thread-even {
+}
+ol.comment-list li.thread-odd {
+}
+
+div.comment-respond {
+}
+div.comment-respond .comment-reply-title {
+}
+div.comment-respond .comment-form {
+}
+div.comment-respond .comment-form label {
+	width: 5em;
+    display: inline-block;
+}
+div.comment-respond .comment-notes {
+	font-size: .8em;
+    margin: -1em 0;
+}
+div.comment-respond .comment-form-comment {
+}
+div.comment-respond .comment-form-comment label {
+	display: none;
+}
+div.comment-respond .comment-form-comment textarea {
+	width: 100%;
+}
+div.comment-respond .comment-form-email {
+}
+div.comment-respond .comment-form-url {
+}
+div.comment-respond .form-submit {
+}
+
+/*** END - Comments ***/
 
 /***
  *  Utilities
