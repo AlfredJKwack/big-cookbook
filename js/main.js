@@ -1,9 +1,5 @@
 'use strict';
 
-///////////////////////////////////////////////
-// Main functions driving the page behaviour //
-///////////////////////////////////////////////
-
 jQuery( document ).ready( function( $ ) {
 
 	var setLeftMenuEvents,
