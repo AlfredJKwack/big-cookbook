@@ -23,15 +23,15 @@
 
 <body <?php body_class(); ?>>
 
-	<a class="skip-link screen-reader-text" href="#article_body"><?php esc_html_e('Skip to content', 'big-cookbook'); ?></a>
-	<div class="main-container">
-		<div class="site-brand-container">
-			<header id="brand-wrapper" class="wrapper clearfix">
-				<h1 class="title">
-				<a id="brand-link" class="button" rel="home" href="<?php echo esc_url(home_url('/')); ?>"><span>A table</span> <span>avec</span> <span>Maya</span>
-				<!-- PHP: <?php bloginfo('name'); ?> -->
-				</a>
-				</h1>
-			</header>
-		</div>
+    <a class="skip-link screen-reader-text" href="#article_body"><?php esc_html_e('Skip to content', 'big-cookbook'); ?></a>
+    <div class="main-container">
+        <div class="site-brand-container">
+            <header id="brand-wrapper" class="wrapper clearfix">
+                <h1 class="title">
+                <a id="brand-link" class="button" rel="home" href="<?php echo esc_url(home_url('/')); ?>"><span>A table</span> <span>avec</span> <span>Maya</span>
+                <!-- PHP: <?php bloginfo('name'); ?> -->
+                </a>
+                </h1>
+            </header>
+        </div>
         <div class="main wrapper clearfix">

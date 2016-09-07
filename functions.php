@@ -12,70 +12,70 @@ if (!function_exists('big_cookbook_setup')) :
  * runs before the init hook. The init hook is too late for some features, such
  * as indicating support for post thumbnails.
  */
-function big_cookbook_setup()
-{
-    /*
-     * Make theme available for translation.
-     * Translations can be filed in the /languages/ directory.
-     * If you're building a theme based on Big Cookbook, use a find and replace
-     * to change 'big-cookbook' to the name of your theme in all the template files.
-     */
-    load_theme_textdomain('big-cookbook', get_template_directory().'/languages');
+    function big_cookbook_setup()
+    {
+        /*
+         * Make theme available for translation.
+         * Translations can be filed in the /languages/ directory.
+         * If you're building a theme based on Big Cookbook, use a find and replace
+         * to change 'big-cookbook' to the name of your theme in all the template files.
+         */
+        load_theme_textdomain('big-cookbook', get_template_directory().'/languages');
 
-    // Add default posts and comments RSS feed links to head.
-    add_theme_support('automatic-feed-links');
+        // Add default posts and comments RSS feed links to head.
+        add_theme_support('automatic-feed-links');
 
-    /*
-     * Let WordPress manage the document title.
-     * By adding theme support, we declare that this theme does not use a
-     * hard-coded <title> tag in the document head, and expect WordPress to
-     * provide it for us.
-     */
-    add_theme_support('title-tag');
+        /*
+         * Let WordPress manage the document title.
+         * By adding theme support, we declare that this theme does not use a
+         * hard-coded <title> tag in the document head, and expect WordPress to
+         * provide it for us.
+         */
+        add_theme_support('title-tag');
 
-    /*
-     * Enable support for Post Thumbnails on posts and pages.
-     *
-     * @link https://developer.wordpress.org/themes/functionality/featured-images-post-thumbnails/
-     */
-    add_theme_support('post-thumbnails');
-    add_image_size('category-thumb', 460, 9999);
+        /*
+         * Enable support for Post Thumbnails on posts and pages.
+         *
+         * @link https://developer.wordpress.org/themes/functionality/featured-images-post-thumbnails/
+         */
+        add_theme_support('post-thumbnails');
+        add_image_size('category-thumb', 460, 9999);
 
-    // This theme uses wp_nav_menu() in one location.
-    register_nav_menus(array(
-        'primary' => esc_html__('Primary', 'big-cookbook'),
-    ));
+        // This theme uses wp_nav_menu() in one location.
+        register_nav_menus(array(
+            'primary' => esc_html__('Primary', 'big-cookbook'),
+        ));
 
-    /*
-     * Switch default core markup for search form, comment form, and comments
-     * to output valid HTML5.
-     */
-    add_theme_support('html5', array(
-        'search-form',
-        'comment-form',
-        'comment-list',
-        'gallery',
-        'caption',
-    ));
+        /*
+         * Switch default core markup for search form, comment form, and comments
+         * to output valid HTML5.
+         */
+        add_theme_support('html5', array(
+            'search-form',
+            'comment-form',
+            'comment-list',
+            'gallery',
+            'caption',
+        ));
 
-    /*
-     * Enable support for Post Formats.
-     * See https://developer.wordpress.org/themes/functionality/post-formats/
-     */
-    add_theme_support('post-formats', array(
-        'aside',
-        'image',
-        'video',
-        'quote',
-        'link',
-    ));
+        /*
+         * Enable support for Post Formats.
+         * See https://developer.wordpress.org/themes/functionality/post-formats/
+         */
+        add_theme_support('post-formats', array(
+            'aside',
+            'image',
+            'video',
+            'quote',
+            'link',
+        ));
 
-    // Set up the WordPress core custom background feature.
-    add_theme_support('custom-background', apply_filters('big_cookbook_custom_background_args', array(
-        'default-color' => 'ffffff',
-        'default-image' => '',
-    )));
-}
+        // Set up the WordPress core custom background feature.
+        add_theme_support('custom-background', apply_filters('big_cookbook_custom_background_args', array(
+            'default-color' => 'ffffff',
+            'default-image' => '',
+        )));
+    }
 endif;
 add_action('after_setup_theme', 'big_cookbook_setup');
 
@@ -132,8 +132,6 @@ function big_cookbook_scripts()
 
     wp_enqueue_script('smartcrop', get_template_directory_uri().'/lib/vendor/smartcrop.js', array());
 
-    wp_enqueue_script('color-thief', get_template_directory_uri().'/lib/vendor/color-thief.js', array());
-
     wp_enqueue_script('background-check', get_template_directory_uri().'/lib/vendor/background-check.js', array());
 
     wp_enqueue_script('big-cookbook-navigation', get_template_directory_uri().'/js/navigation.js', array(), '20151215', true);
@@ -157,7 +155,7 @@ function add_ajaxurl_cdata_to_front()
     <script type="text/javascript"> //<![CDATA[
         ajaxurl = '<?php echo admin_url('admin-ajax.php'); ?>';
     //]]> </script>
-<?php 
+    <?php
 }
 add_action('wp_head', 'add_ajaxurl_cdata_to_front', 1);
 

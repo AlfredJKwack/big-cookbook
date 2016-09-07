@@ -12,13 +12,13 @@
 
 
 
-	<footer id="colophon" class="site-footer is--hidden" role="contentinfo">
-		<div class="site-info">
-			<a href="<?php echo esc_url(__('https://wordpress.org/', 'big-cookbook')); ?>"><?php printf(esc_html__('Proudly powered by %s', 'big-cookbook'), 'WordPress'); ?></a>
-			<span class="sep"> | </span>
-			<?php printf(esc_html__('Theme: %1$s by %2$s.', 'big-cookbook'), 'big-cookbook', '<a href="http://www.badsoda.com" rel="designer">Thomas Vanparys</a>'); ?>
-		</div><!-- .site-info -->
-	</footer><!-- #colophon -->
+    <footer id="colophon" class="site-footer is--hidden" role="contentinfo">
+        <div class="site-info">
+            <a href="<?php echo esc_url(__('https://wordpress.org/', 'big-cookbook')); ?>"><?php printf(esc_html__('Proudly powered by %s', 'big-cookbook'), 'WordPress'); ?></a>
+            <span class="sep"> | </span>
+            <?php printf(esc_html__('Theme: %1$s by %2$s.', 'big-cookbook'), 'big-cookbook', '<a href="http://www.badsoda.com" rel="designer">Thomas Vanparys</a>'); ?>
+        </div><!-- .site-info -->
+    </footer><!-- #colophon -->
 
 <?php wp_footer(); ?>
 

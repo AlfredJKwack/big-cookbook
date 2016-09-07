@@ -25,7 +25,6 @@
     "jquery-focuspoint": "jonom/jquery-focuspoint#^1.1.1",
     "normalize-css": "necolas/normalize.css#^3.0.3",
     "smartcrop": "jwagner/smartcrop.js",
-    "Background-Check": "kennethcachia/Background-Check#^1.2.2",
-    "color-thief": "lokesh/color-thief#^2.0.1"
+    "Background-Check": "kennethcachia/Background-Check#^1.2.2"
   }
 }
