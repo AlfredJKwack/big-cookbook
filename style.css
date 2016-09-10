@@ -768,6 +768,22 @@ body.is--pushed-right #abstract .trigger.more {
 #navigation_main.is--invisible {
 	display: none;
 }
+
+/*
+	NOTE: nav.posts-navigation 
+	The posts-navigation portion of the dom is not required in 
+	this theme. The theme has ajax loading of article_list items.
+	The only instance it could be useful is if for some reason
+	you open a paginated url (eg. xyz.com/page/2/) and would like
+	to view previous/next pages.
+ */
+nav.posts-navigation {
+	display: none; /* Supress pagination older|newer posts */
+}
+body.paged.is--pushed-right nav.posts-navigation {
+	display: inherit; /* Only show when showing article_list */
+}
+
 /*** END - Main Navigation ***/
 
 
