@@ -1,6 +1,7 @@
 /bower_components
 /node_modules
 *.sublime*
+*.afphoto
 
 # OS generated files #
 ######################
