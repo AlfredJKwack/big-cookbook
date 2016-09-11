@@ -1074,6 +1074,11 @@ div.comment-respond .form-submit {
 
 /*** END - Comments ***/
 
+
+article.error-404 header.page-header {
+	background-color: #ddd;
+}
+
 /***
  *  Utilities
  */

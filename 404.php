@@ -5,16 +5,25 @@
  * @link https://codex.wordpress.org/Creating_an_Error_404_Page
  */
 get_header(); ?>
-
-    <div id="primary" class="content-area">
-        <main id="main" class="site-main" role="main">
-
-            <section class="error-404 not-found">
-                <header class="page-header">
+    
+        <article class="error-404 not-found">
+            <header class="page-header">
+                <div class="featured-img focuspoint">                
+                    <img src="<?php echo get_template_directory_uri(); ?>/img/404.png" alt="404 Error image" />
+                </div>
+                <div id="abstract">
                     <h1 class="page-title"><?php esc_html_e('Oops! That page can&rsquo;t be found.', 'big-cookbook'); ?></h1>
-                </header><!-- .page-header -->
-
-                <div class="page-content">
+                    <!--
+                    <a href="javascript:void(0)" class="left-menu button trigger more"><span>More recipes</span></a>
+                    <a href="javascript:void(0)" class="left-menu button trigger less">Continue reading</a>
+                    -->
+                </div>
+            </header><!-- .page-header -->
+            <div id="article_body">
+                <!--
+                <a id="" href="javascript:void(0)" class="right-menu button trigger"><span>&equiv;</span></a>
+                -->
+                <section>
                     <p><?php esc_html_e('It looks like nothing was found at this location. Maybe try one of the links below or a search?', 'big-cookbook'); ?></p>
 
                     <?php
@@ -50,12 +59,9 @@ get_header(); ?>
 
                     the_widget('WP_Widget_Tag_Cloud');
                     ?>
-
-                </div><!-- .page-content -->
-            </section><!-- .error-404 -->
-
-        </main><!-- #main -->
-    </div><!-- #primary -->
-
+                    <br/>
+                </section>
+            </div><!-- #article_body -->
+        </article><!-- .error-404 not-found ?> -->
 <?php
 get_footer();
