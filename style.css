@@ -516,6 +516,82 @@ Underscores is distributed under the terms of the GNU GPL v2 or later.
 /***
  *  Panel buttons
  */
+
+
+/*
+	Flaticon icon font: Flaticon
+	Creation date: 08/09/2016 22:28
+*/
+@font-face {
+	font-family: "Flaticon";
+	font-weight: normal;
+	font-style: normal;
+	src: url("fonts/Flaticon.eot");
+	src: url("fonts/Flaticon.eot?#iefix") format("embedded-opentype"),
+		 url("fonts/Flaticon.woff") format("woff"),
+		 url("fonts/Flaticon.ttf") format("truetype"),
+		 url("fonts/Flaticon.svg#Flaticon") format("svg");
+}
+
+nav .nav-next a:before,
+nav .nav-next a:after,
+nav .nav-previous a:before,
+nav .nav-previous a:after,
+nav a.right-menu:before,
+nav a.right-menu:after,
+nav input.search-submit:before,
+nav input.search-submit:after,
+a.left-menu.more:before,
+a.left-menu.more:after  {
+	font-family: Flaticon;
+	font-size: 0.8em;
+	font-style: normal;	
+	vertical-align: 0;
+	padding-right: 0.4em;
+}
+
+nav a.right-menu:before {
+	content: "\f103"; /* close cross icon */
+    font-size: 1.4em;
+}
+nav input.search-submit {
+/*	display: none;*/
+}
+nav input.search-submit:before {
+	content: "\f109"; /* magnifier icon */
+}
+nav a.right-menu span {
+	display: none;
+}
+
+nav .nav-next, 
+nav .nav-previous {
+    float: left;
+    display: inline-block;
+    margin-top: .5em;
+}
+nav .nav-next {
+ 	margin-left: 1em;
+}
+nav .nav-next a,
+nav .nav-previous a {
+	border-bottom: none;
+	padding: 0.2em 0.4em;
+    margin-left: -0.4em;
+}
+nav .nav-next a:after {
+ 	content: "\f10d"; /* forward arrow icon */
+ 	padding-left: 0.4em;
+}
+nav .nav-previous a:before { 
+	content: "\f101"; /* back arrow icon */
+}
+
+a.left-menu.more:before { 
+	content: "\f102"; /* open book icon */
+	font-weight: 400;
+}
+
 a.left-menu {
     -webkit-transition: all 0.25s ease-out;
     -moz-transition: all 0.25s ease-out;
@@ -542,11 +618,22 @@ a.right-menu {
 	background: rgba(235,235,235,0.1);
 	color: #000000;
 }
+nav a.right-menu,
+nav a.right-menu:hover,
+nav a.right-menu:focus  {
+	background-color: inherit;
+	color: #fff;
+}
+nav a.right-menu:hover,
+nav a.right-menu:focus {
+	color: rgba(102, 109, 116, 0.5);
+}
 
 a.left-menu {
 	background: rgba(255,255,255,0.1);
 	color: #ffffff;
-	border: 0px;
+	border: white 1px solid;
+	font-weight: 700;
 }
 
 a.left-menu:hover {
@@ -572,11 +659,13 @@ a.left-menu:hover {
     float: left;
 }
 
+/*
 #navigation_main a.right-menu span {
 	font-family: 'Arial Rounded MT Bold','Helvetica Rounded',Arial,sans-serif;
 	margin: .5em 1em;
     display: inline-block;
 }
+*/
 body #abstract .trigger.less {
 	display: none;
 }

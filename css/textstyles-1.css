@@ -213,3 +213,12 @@
 	    -moz-border-radius: 1.5em;
 	    border-radius: 1.5em;
 	}
+
+
+.background--dark button, 
+.background--dark input, 
+.background--dark optgroup,
+.background--dark select,
+.background--dark textarea {
+	color: black	;
+}

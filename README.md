@@ -47,4 +47,4 @@ To Do:
 Nice to Haves:
 =============
 * Integrate a plugin that would allow to narrow a search based on selecting tags (ie what recipies have these ingredients)
-* Look
+* left menu button hover = peek
