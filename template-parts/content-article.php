@@ -27,7 +27,7 @@
                     <?php
                     endif; ?>
                     <a href="javascript:void(0)" class="left-menu button trigger more"><span>More recipes</span></a>
-                    <a href="javascript:void(0)" class="left-menu button trigger less">Contineu reading</a>
+                    <a href="javascript:void(0)" class="left-menu button trigger less">Continue reading</a>
                 </div>
             </header><!-- .entry-header -->
             <div id="article_body">
