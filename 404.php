@@ -12,7 +12,7 @@ get_header(); ?>
                     <img src="<?php echo get_template_directory_uri(); ?>/img/404.png" alt="404 Error image" />
                 </div>
                 <div id="abstract">
-                    <h1 class="page-title"><?php esc_html_e('Oops! That page can&rsquo;t be found.', 'big-cookbook'); ?></h1>
+                    <h1 class="page-title"><?php esc_html_e('Oops! It looks like that page is toast.', 'big-cookbook'); ?></h1>
                     <!--
                     <a href="javascript:void(0)" class="left-menu button trigger more"><span>More recipes</span></a>
                     <a href="javascript:void(0)" class="left-menu button trigger less">Continue reading</a>
@@ -24,7 +24,7 @@ get_header(); ?>
                 <a id="" href="javascript:void(0)" class="right-menu button trigger"><span>&equiv;</span></a>
                 -->
                 <section>
-                    <p><?php esc_html_e('It looks like nothing was found at this location. Maybe try one of the links below or a search?', 'big-cookbook'); ?></p>
+                    <p><?php esc_html_e('It seems like there is nothing pertinent at this location. Maybe try one of the links below or a search?', 'big-cookbook'); ?></p>
 
                     <?php
                     get_search_form();
