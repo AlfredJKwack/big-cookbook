@@ -34,10 +34,6 @@ function big_cookbook_infinite_scroll_render()
 {
     while (have_posts()) {
         the_post();
-        if (is_search()) :
-            get_template_part('template-parts/content', 'search');
-        else :
-            get_template_part('template-parts/content-thumb', get_post_format());
-        endif;
+        get_template_part('template-parts/content-thumb', get_post_format());
     }
 }

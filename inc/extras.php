@@ -25,7 +25,7 @@ function big_cookbook_body_classes($classes)
     }
 
     // Adds a class of is--pushed-right to archives and categories
-    if (is_archive() or is_category() or is_paged()) {
+    if (is_archive() or is_category() or is_paged() or is_search()) {
         $classes[] = 'is--pushed-right';
     }
 
