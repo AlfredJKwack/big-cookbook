@@ -20,9 +20,9 @@ get_header(); ?>
                 </div>
             </header><!-- .page-header -->
             <div id="article_body">
-                <!--
+
                 <a id="" href="javascript:void(0)" class="right-menu button trigger"><span>&equiv;</span></a>
-                -->
+
                 <section>
                     <p><?php esc_html_e('It seems like there is nothing pertinent at this location. Maybe try one of the links below or a search?', 'big-cookbook'); ?></p>
 
@@ -63,5 +63,8 @@ get_header(); ?>
                 </section>
             </div><!-- #article_body -->
         </article><!-- .error-404 not-found ?> -->
+        </div> <!-- #main -->
+    </div> <!-- #main-container -->
 <?php
+get_sidebar();
 get_footer();
