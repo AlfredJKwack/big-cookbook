@@ -4,8 +4,9 @@
  *
  * @link https://codex.wordpress.org/Template_Hierarchy
  */
-
+                    
                     the_widget('WP_Widget_Recent_Posts');
+                    
 
                     // Only show the widget if site has multiple categories.
                     if (big_cookbook_categorized_blog()) :
@@ -29,9 +30,10 @@
                     <?php
                     endif;
 
-                    // Only show the widget if sit has multiple tags.
+                    // Only show the widget if site has multiple tags.
                     if (big_cookbook_tagged_blog()) : 
                         $tag_title = esc_html__('These topics might also spark an interest.','big-cookbook');
                         the_widget('WP_Widget_Tag_Cloud', Array("title" => $tag_title) );
 
                     endif;
+?>

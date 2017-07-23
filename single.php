@@ -23,19 +23,10 @@ get_header(); ?>
                 <div id="blog-list">
             <?php
 
-            /* put something in the article list */
 
-            $archive_args = array(
-                'type' => 'monthly',
-                'limit' => '',
-                'format' => 'html',
-                'before' => '',
-                'after' => '',
-                'show_post_count' => false,
-                'echo' => 1,
-                'order' => 'DESC',
-            );
-            wp_get_archives($archive_args);
+            /* put recent articles in the article list */
+            get_template_part('template-parts/content', 'recent');
+             
         endwhile;
         ?>
                     </div><!-- #blog-list -->

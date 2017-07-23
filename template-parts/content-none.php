@@ -12,10 +12,14 @@
                 </div>
                 <div id="abstract">
                     <h1 class="page-title"><?php esc_html_e('We came up empty!', 'big-cookbook'); ?></h1>
-                    <!--
-                    <a href="javascript:void(0)" class="left-menu button trigger more"><span>More recipes</span></a>
-                    <a href="javascript:void(0)" class="left-menu button trigger less">Continue reading</a>
-                    -->
+
+                    <?php 
+                    if ( is_search() ) : ?>
+                        <a href="javascript:void(0)" class="left-menu button trigger more"><span>More recipes</span></a>
+                        <a href="javascript:void(0)" class="left-menu button trigger less">Continue reading</a>
+                    <?php 
+                    endif; ?>
+
                 </div>
             </header><!-- .page-header -->
             <div id="article_body">
@@ -52,3 +56,16 @@
                 </section>
             </div><!-- #article_body -->
         </article><!-- .no-content not-found ?> -->
+        
+        <aside id="article_list" class="">
+            <?php wp_nav_menu(array('theme_location' => 'primary', 'menu_id' => 'primary-menu')); ?>
+            <h1>More Articles</h1>
+            <div id="blog-list">
+            <?php
+
+            /* put recent articles in the article list */
+            get_template_part('template-parts/content', 'recent');
+
+            ?>
+            </div><!-- #blog-list -->
+        </aside><!-- #article_list -->        

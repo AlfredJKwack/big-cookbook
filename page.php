@@ -28,9 +28,8 @@ get_header(); ?>
                 <div id="blog-list">
             <?php
 
-            /* put something in the article list */
-
-            get_template_part('template-parts/content', 'widgets');
+            /* put recent articles in the article list */
+            get_template_part('template-parts/content', 'recent');
 
         endwhile;
         ?>
