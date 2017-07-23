@@ -539,8 +539,8 @@ nav .nav-previous a:before,
 nav .nav-previous a:after,
 nav a.right-menu:before,
 nav a.right-menu:after,
-nav input.search-submit:before,
-nav input.search-submit:after,
+form.search-form input.search-field:before,
+form.search-form input.search-field:after,
 a.left-menu.more:before,
 a.left-menu.more:after  {
 	font-family: Flaticon;
@@ -554,12 +554,24 @@ nav a.right-menu:before {
 	content: "\f103"; /* close cross icon */
     font-size: 1.4em;
 }
-nav input.search-submit {
-/*	display: none;*/
-}
-nav input.search-submit:before {
+form.search-form label:before {
+	font-family: Flaticon;
 	content: "\f109"; /* magnifier icon */
+	position: absolute;
+	font-size: 0.8em;
+    padding-top: 0.2em;
 }
+form.search-form input.search-field {
+	background-color: transparent;
+	border: 1px solid #fff;
+	border-width: 0 0 1px;
+	padding-left: 1.2em;
+	color: #fff;
+}
+form.search-form input.search-submit {
+	display: none;
+}
+
 nav a.right-menu span {
 	display: none;
 }
