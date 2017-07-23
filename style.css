@@ -1090,7 +1090,9 @@ div.comment-respond .form-submit {
 article.error-404 header.page-header {
 	background-color: #ddd;
 }
-
+article.no-content header.page-header {
+	background-color: #ddd;
+}
 /***
  *  Utilities
  */

@@ -120,3 +120,47 @@ function big_cookbook_category_transient_flusher()
 }
 add_action('edit_category', 'big_cookbook_category_transient_flusher');
 add_action('save_post', 'big_cookbook_category_transient_flusher');
+
+/**
+ * Returns true if a blog has more than 1 tag.
+ *
+ * @return bool
+ */
+function big_cookbook_tagged_blog()
+{
+    if (false === ($all_the_cool_tags = get_transient('big_cookbook_tags'))) {
+        // Create an array of all the tags that are attached to posts.
+        $all_the_cool_tags = get_tags(array(
+            'fields' => 'ids',
+            'hide_empty' => 1,
+            // We only need to know if there is more than one tag.
+            'number' => 2,
+        ));
+
+        // Count the number of tags that are attached to the posts.
+        $all_the_cool_tags = count($all_the_cool_tags);
+
+        set_transient('big_cookbook_tags', $all_the_cool_tags);
+    }
+
+    if ($all_the_cool_tags > 1) {
+        // This blog has more than 1 tag so big_cookbook_tagged_blog should return true.
+        return true;
+    } else {
+        // This blog has only 1 category so big_cookbook_tagged_blog should return false.
+        return false;
+    }
+}
+/**
+ * Flush out the transients used in big_cookbook_tagged_blog.
+ */
+function big_cookbook_tag_transient_flusher()
+{
+    if (defined('DOING_AUTOSAVE') && DOING_AUTOSAVE) {
+        return;
+    }
+    // Like, beat it. Dig?
+    delete_transient('big_cookbook_tags');
+}
+add_action('edit_tag', 'big_cookbook_tag_transient_flusher');
+add_action('save_post', 'big_cookbook_tag_transient_flusher');

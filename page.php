@@ -11,24 +11,33 @@
  */
 get_header(); ?>
 
-    <div id="primary" class="content-area">
-        <main id="main" class="site-main" role="main">
 
-            <?php
-            while (have_posts()) :
-                the_post();
+        <?php
 
-                get_template_part('template-parts/content', 'page');
+        /* Start the Loop */
+        while (have_posts()) :
+            the_post();
 
-                // If comments are open or we have at least one comment, load up the comment template.
-                if (comments_open() || get_comments_number()) :
-                    comments_template();
-                endif;
-            endwhile; // End of the loop.
+            /* display the page post */
+            get_template_part('template-parts/content', 'page');
+
             ?>
+            <aside id="article_list" class="">
+                <?php wp_nav_menu(array('theme_location' => 'primary', 'menu_id' => 'primary-menu')); ?>
+                <h1>More Articles</h1>
+                <div id="blog-list">
+            <?php
 
-        </main><!-- #main -->
-    </div><!-- #primary -->
+            /* put something in the article list */
+
+            get_template_part('template-parts/content', 'widgets');
+
+        endwhile;
+        ?>
+                    </div><!-- #blog-list -->
+                </aside><!-- #article_list -->
+        </div> <!-- #main -->
+    </div> <!-- #main-container -->
 
 <?php
 get_sidebar();

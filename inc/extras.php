@@ -5,6 +5,11 @@
  * Eventually, some of the functionality here could be replaced by core features.
  */
 
+function is_search_has_results() {
+    // helper function to determine whether the searh yielded results 
+    return 0 != $GLOBALS['wp_query']->found_posts;
+}
+
 /**
  * Adds custom classes to the array of body classes.
  *
@@ -25,7 +30,7 @@ function big_cookbook_body_classes($classes)
     }
 
     // Adds a class of is--pushed-right to archives and categories
-    if (is_archive() or is_category() or is_paged() or is_search()) {
+    if ( ( is_archive() or is_category() or is_paged() or is_search_has_results() ) and !is_singular() ) {
         $classes[] = 'is--pushed-right';
     }
 
