@@ -52,10 +52,12 @@ add_filter( 'infinite_scroll_archive_supported', 'big_cookbook_jetpack_custom_su
 /**
  * Sets Infinite Scroll's query object if necessary. 
  */
+function big_cookbook_force_batch() { return false; };
 function big_cookbook_infinite_scroll_set_query_ref(){
 
     if ( is_singular() ) {
         add_filter ( 'infinite_scroll_query_object', 'big_cookbook_get_custom_query' );
+        add_filter ( 'infinite_scroll_is_last_batch', 'big_cookbook_force_batch' );
     }
 }
-//add_action( 'template_redirect','big_cookbook_infinite_scroll_set_query_ref',1);
+add_action( 'template_redirect','big_cookbook_infinite_scroll_set_query_ref',1);
