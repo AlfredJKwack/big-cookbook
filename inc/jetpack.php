@@ -37,3 +37,25 @@ function big_cookbook_infinite_scroll_render()
         get_template_part('template-parts/content-thumb', get_post_format());
     }
 }
+
+/**
+ * Customize the page types supported through Infinite Scroll.
+ */
+function big_cookbook_jetpack_custom_support() {
+    $supported = current_theme_supports( 'infinite-scroll' ) && ( is_home() || is_archive() || is_search() || is_singular() );
+     
+    return $supported;
+}
+add_filter( 'infinite_scroll_archive_supported', 'big_cookbook_jetpack_custom_support' );
+
+
+/**
+ * Sets Infinite Scroll's query object if necessary. 
+ */
+function big_cookbook_infinite_scroll_set_query_ref(){
+
+    if ( is_singular() ) {
+        add_filter ( 'infinite_scroll_query_object', 'big_cookbook_get_custom_query' );
+    }
+}
+//add_action( 'template_redirect','big_cookbook_infinite_scroll_set_query_ref',1);

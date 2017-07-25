@@ -5,15 +5,7 @@
  * @link https://codex.wordpress.org/Template_Hierarchy
  */
 
-
-$default_posts_per_page = get_option( 'posts_per_page' );
-
-$r = new WP_Query( apply_filters( 'widget_posts_args', array(
-	'posts_per_page'      => $default_posts_per_page,
-	'no_found_rows'       => true,
-	'post_status'         => 'publish',
-	'ignore_sticky_posts' => true
-) ) );
+$r = big_cookbook_get_custom_query();
 
 if ($r->have_posts()) :
 
