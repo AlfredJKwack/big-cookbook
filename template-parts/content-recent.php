@@ -5,6 +5,7 @@
  * @link https://codex.wordpress.org/Template_Hierarchy
  */
 
+// get a WP_Qeury object
 $r = big_cookbook_get_custom_query();
 
 if ($r->have_posts()) :

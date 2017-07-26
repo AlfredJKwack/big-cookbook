@@ -6,10 +6,12 @@
  */
 
 /**
- * Jetpack setup function.
+ * Jetpack setup functions.
  *
  * See: https://jetpack.com/support/infinite-scroll/
  * See: https://jetpack.com/support/responsive-videos/
+ *
+ * @uses  add_theme_support
  */
 function big_cookbook_jetpack_setup()
 {
@@ -36,6 +38,7 @@ function big_cookbook_infinite_scroll_render()
         the_post();
         get_template_part('template-parts/content-thumb', get_post_format());
     }
+    wp_reset_postdata();
 }
 
 /**
@@ -51,8 +54,11 @@ add_filter( 'infinite_scroll_archive_supported', 'big_cookbook_jetpack_custom_su
 
 /**
  * Sets Infinite Scroll's query object if necessary. 
+ *
+ * @uses  add_filter 
  */
-function big_cookbook_force_batch() { return false; };
+function big_cookbook_force_batch() { return false; }
+
 function big_cookbook_infinite_scroll_set_query_ref(){
 
     if ( is_singular() ) {
