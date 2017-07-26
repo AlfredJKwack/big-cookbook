@@ -38,6 +38,7 @@ function big_cookbook_infinite_scroll_render()
         the_post();
         get_template_part('template-parts/content-thumb', get_post_format());
     }
+    // Reset the global $the_post as the custom query will have stomped on it
     wp_reset_postdata();
 }
 

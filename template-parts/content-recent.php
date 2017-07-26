@@ -16,7 +16,7 @@ if ($r->have_posts()) :
 
 	endwhile;	
 
-	// Reset the global $the_post as this query will have stomped on it
+	// Reset the global $the_post as the custom query will have stomped on it
 	wp_reset_postdata();
 
 endif;	
