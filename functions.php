@@ -219,3 +219,41 @@ require get_template_directory().'/inc/customizer.php';
  * Load Jetpack compatibility file.
  */
 require get_template_directory().'/inc/jetpack.php';
+
+if (!function_exists('big_cookbook_get_custom_query')) :
+/**
+ * Returns a custom query object. 
+ */
+    function big_cookbook_get_custom_query(){
+
+        $default_posts_per_page = get_option( 'posts_per_page' );
+
+        // set the number of posts to be the same number shown 
+        // on the 'aside' of the main loop
+        if ($default_posts_per_page > 3 ) : 
+            $default_posts_per_page = $default_posts_per_page - 1;
+        endif;    
+
+        // set the pagination if available
+        if ( get_query_var( 'paged' ) ) { 
+            $paged = get_query_var( 'paged' ); 
+        }
+        elseif ( get_query_var( 'page' ) ) { 
+            $paged = get_query_var( 'page' ); 
+        }
+        else { 
+            $paged = 1; 
+        }
+
+        // build out our query
+        return new WP_Query( array(
+            'posts_per_page'      => $default_posts_per_page,
+            'no_found_rows'       => true,
+            'post_status'         => 'publish',
+            'ignore_sticky_posts' => true,
+            'paged'               => $paged
+        ) );
+
+        // ATTENTION: wp_reset_postdata() has not been run!
+    }
+endif;
