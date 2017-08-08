@@ -8,54 +8,56 @@
  * E.g., it puts together the home page when no home.php file exists.
  *
  * @link https://codex.wordpress.org/Template_Hierarchy
+ * @package big-cookbook
  */
+
 get_header(); ?>
 
 
-        <?php
-        if (have_posts()) :
-            /* Start the Loop */
-            while (have_posts()) :
-                the_post();
-                
-                if ($wp_query->current_post == 0) :
-                    /* first post */
-                    get_template_part('template-parts/content-article', get_post_format());
+		<?php
+		if ( have_posts() ) :
+			/* Start the Loop */
+			while ( have_posts() ) :
+				the_post();
 
-                    ?>
-                    <aside id="article_list" class="">
+				if ( $wp_query->current_post === 0 ) :
+					/* first post */
+					get_template_part( 'template-parts/content-article', get_post_format() );
 
-                        <?php wp_nav_menu(array('theme_location' => 'primary', 'menu_id' => 'primary-menu'));
-                        ?>
-                        <h1>
-                            <?php
-                            if (is_search()) :
-                                printf(esc_html__('Search Results for: %s', 'big-cookbook'), '<span>'.get_search_query().'</span>');
-                            else :
-                                echo "More Articles";
-                            endif;
-                            ?>
-                        </h1>
-                        <div id="blog-list">
+					?>
+					<aside id="article_list" class="">
 
-                    <?php
-                else :
-                    /* not first post */
-                    get_template_part('template-parts/content-thumb', get_post_format());
-                endif;
-            endwhile;
+						<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'primary-menu' ) );
+						?>
+						<h1>
+							<?php
+							if ( is_search() ) :
+								printf( esc_html__( 'Search Results for: %s', 'big-cookbook' ), '<span>' . get_search_query() . '</span>' );
+							else :
+								echo 'More Articles';
+							endif;
+							?>
+						</h1>
+						<div id="blog-list">
 
-            ?>    
-                        </div><!-- #blog-list -->
-                    </aside><!-- #article_list -->
-            <?php
-        else :
-            get_template_part('template-parts/content', 'none');
-        endif; ?>
-                    
+					<?php
+				else :
+					/* not first post */
+					get_template_part( 'template-parts/content-thumb', get_post_format() );
+				endif;
+			endwhile;
 
-        </div> <!-- #main -->
-    </div> <!-- #main-container -->
+			?>    
+						</div><!-- #blog-list -->
+					</aside><!-- #article_list -->
+			<?php
+		else :
+			get_template_part( 'template-parts/content', 'none' );
+		endif; ?>
+					
+
+		</div> <!-- #main -->
+	</div> <!-- #main-container -->
 
 <?php
 get_sidebar();

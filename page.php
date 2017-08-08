@@ -8,35 +8,37 @@
  * different template.
  *
  * @link https://codex.wordpress.org/Template_Hierarchy
+ * @package big-cookbook
  */
+
 get_header(); ?>
 
 
-        <?php
+		<?php
 
-        /* Start the Loop */
-        while (have_posts()) :
-            the_post();
+		/* Start the Loop */
+		while ( have_posts() ) :
+			the_post();
 
-            /* display the page post */
-            get_template_part('template-parts/content', 'page');
+			/* display the page post */
+			get_template_part( 'template-parts/content', 'page' );
 
-            ?>
-            <aside id="article_list" class="">
-                <?php wp_nav_menu(array('theme_location' => 'primary', 'menu_id' => 'primary-menu')); ?>
-                <h1>More Articles</h1>
-                <div id="blog-list">
-            <?php
+			?>
+			<aside id="article_list" class="">
+				<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'primary-menu' ) ); ?>
+				<h1>More Articles</h1>
+				<div id="blog-list">
+			<?php
 
-            /* put recent articles in the article list */
-            get_template_part('template-parts/content', 'recent');
+			/* put recent articles in the article list */
+			get_template_part( 'template-parts/content', 'recent' );
 
-        endwhile;
-        ?>
-                    </div><!-- #blog-list -->
-                </aside><!-- #article_list -->
-        </div> <!-- #main -->
-    </div> <!-- #main-container -->
+		endwhile;
+		?>
+					</div><!-- #blog-list -->
+				</aside><!-- #article_list -->
+		</div> <!-- #main -->
+	</div> <!-- #main-container -->
 
 <?php
 get_sidebar();
