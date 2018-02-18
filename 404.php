@@ -46,7 +46,7 @@ get_header(); ?>
 			<?php
 
 			/* put recent articles in the article list */
-			get_template_part( 'template-parts/content', 'recent' );
+			get_template_part( 'template-parts/content-recent' );
 
 			?>
 			</div><!-- #blog-list -->

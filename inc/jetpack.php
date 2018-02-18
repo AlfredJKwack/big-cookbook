@@ -30,6 +30,16 @@ function big_cookbook_jetpack_setup() {
 add_action( 'after_setup_theme', 'big_cookbook_jetpack_setup' );
 
 /**
+ * Remove sharing buttons from tiles/excerpts.
+ */
+function jptweak_remove_share() {
+	// leaving this causes issues on 404/isSingle due to custom loop.
+	remove_filter( 'the_excerpt', 'sharing_display', 19 );
+}
+add_action( 'loop_start', 'jptweak_remove_share' );
+
+
+/**
  * Custom render function for Infinite Scroll.
  */
 function big_cookbook_infinite_scroll_render() {

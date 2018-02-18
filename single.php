@@ -28,7 +28,7 @@ get_header(); ?>
 
 
 			/* put recent articles in the article list */
-			get_template_part( 'template-parts/content', 'recent' );
+			get_template_part( 'template-parts/content-recent' );
 
 		endwhile;
 		?>

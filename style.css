@@ -442,7 +442,7 @@ Underscores is distributed under the terms of the GNU GPL v2 or later.
 .main > article > header > #abstract {
 	top: 0px;
 	padding: 0 5%;		
-	padding-top: 7em;
+	padding-top: 11em;
 	width: 100%;
 	-webkit-box-sizing: border-box;
 	-moz-box-sizing: border-box;
@@ -456,7 +456,7 @@ Underscores is distributed under the terms of the GNU GPL v2 or later.
 }
 
 .main > article > #article_body {
-	padding-top: 8em;
+	padding-top: 12em;
 	width: 50%;
 	margin-left: 50%;
 	position: relative;
@@ -495,9 +495,8 @@ Underscores is distributed under the terms of the GNU GPL v2 or later.
 }
 
 #article_body img.alignnone {
-    width: 95%;
-    height: 95%;
-    padding: 2.5%;
+    width: 100%;
+    height: 100%;
     background: #f6f6f6;
 }
 
