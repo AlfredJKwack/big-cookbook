@@ -14,6 +14,9 @@
  *
  * @uses  add_theme_support
  */
+
+define( 'JETPACK_DEV_DEBUG', true );
+
 function big_cookbook_jetpack_setup() {
 	// Add theme support for Infinite Scroll.
 	add_theme_support('infinite-scroll', array(
