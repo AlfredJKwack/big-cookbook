@@ -27,17 +27,9 @@ get_header(); ?>
 					?>
 					<aside id="article_list" class="">
 
-						<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'primary-menu' ) );
+						<?php
+						get_template_part( 'template-parts/content', 'primarymenu' );
 						?>
-						<h1>
-							<?php
-							if ( is_search() ) :
-								printf( esc_html__( 'Search Results for: %s', 'big-cookbook' ), '<span>' . get_search_query() . '</span>' );
-							else :
-								echo 'More Articles';
-							endif;
-							?>
-						</h1>
 						<div id="blog-list">
 
 					<?php

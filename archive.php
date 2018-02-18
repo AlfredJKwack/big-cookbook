@@ -5,7 +5,7 @@
  * @link https://codex.wordpress.org/Template_Hierarchy
  */
 get_header(); ?>
-
+    
         <?php
         if (have_posts()) :
             /* Start the Loop */
@@ -18,12 +18,8 @@ get_header(); ?>
 
                     ?>
                     <aside id="article_list" class="">
-
-                        <?php wp_nav_menu(array('theme_location' => 'primary', 'menu_id' => 'primary-menu')); ?>
-
                         <?php
-                            the_archive_title('<h1 class="page-title">', '</h1>');
-                            the_archive_description('<div class="taxonomy-description">', '</div>');
+                        get_template_part( 'template-parts/content', 'primarymenu' );
                         ?>
                         <div id="blog-list">
                         

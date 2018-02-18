@@ -1,8 +1,12 @@
-/***
+
 @import url(https://fonts.googleapis.com/css?family=Josefin+Slab);
 @import url(https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300);
+@import url(https://fonts.googleapis.com/css?family=Montserrat);
 @import url(https://fonts.googleapis.com/css?family=Lobster);
-*/
+@import url('https://fonts.googleapis.com/css?family=Merriweather:300');
+@import url('https://fonts.googleapis.com/css?family=Raleway');
+
+/***
 
 @font-face {
     font-family: 'Josefin Slab';
@@ -23,6 +27,7 @@
     font-style: normal;
 
 }
+*/
 
 /***
  * General	
@@ -31,10 +36,11 @@
 		font-size: 62.5%;
 	} 
 	body {
-		font-size: 1.9rem;
-		line-height: 1.4;
+		font-size: 1.5rem;
+		font-weight: lighter;
+		line-height: 1.5;
 		text-rendering: optimizeLegibility;
-		font-family: 'Josefin Slab', serif;
+		font-family: 'Raleway', sans-serif;
 	}
 
 	#navigation_main {
@@ -64,13 +70,17 @@
 	}
 */
 	#abstract h1 {
-	 	font-family: 'Open Sans Condensed', sans-serif;
+	 	font-family: 'Montserrat', 'Open Sans Condensed', sans-serif;
 	    font-size: 8rem;
-	    line-height: 9rem;
+	    line-height: 7rem;
 	    font-weight: 400;
-	    margin-top: 0px;
+/*	    margin-top: 0px;*/
 	    margin-bottom: 1.7rem;
 	}
+	div.list-content-categories h1 {
+	    margin: 0 0 -3rem 0;
+	    padding: 3rem 0 0 0;
+	}	
 	#article_body > section > p:first-child {
 		font-size: 2.5rem;
 		line-height: 2.6rem;	
@@ -159,9 +169,12 @@
 		border-color: rgba(52,73,94,0);
 		background-color: rgba(102, 109, 116, 0.5);
 	}
+
 	#primary-menu {
-		font-family: 'Open Sans Condensed', sans-serif;
+		font-size: 1.2rem;
+		font-family: 'Montserrat', serif;	
 	}
+/*
 	#primary-menu li a {
 		color: #999;
 	}	
@@ -178,6 +191,8 @@
 	#primary-menu li.current-menu-item a:focus {
 		background-color: rgba(102, 109, 116, 0.1);
 	}		
+
+*/
 /***
  * lists	
  */

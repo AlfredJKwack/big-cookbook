@@ -60,8 +60,9 @@
 		</article><!-- .no-content not-found ?> -->
 		
 		<aside id="article_list" class="">
-			<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'primary-menu' ) ); ?>
-			<h1>More Articles</h1>
+			<?php
+			get_template_part( 'template-parts/content', 'primarymenu' );
+			?>
 			<div id="blog-list">
 			<?php
 
