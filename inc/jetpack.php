@@ -19,7 +19,7 @@ function big_cookbook_jetpack_setup() {
 	add_theme_support('infinite-scroll', array(
 		'container' => 'blog-list"',
 		'render' => 'big_cookbook_infinite_scroll_render',
-		'footer' => false,
+		'footer_widgets' => false,
 		'type' => 'click',
 		'wrapper' => false,
 	));
@@ -56,7 +56,8 @@ add_filter( 'infinite_scroll_archive_supported', 'big_cookbook_jetpack_custom_su
  * Falsy.
  */
 function big_cookbook_force_batch() {
-	return false; }
+	return false;
+}
 
 /**
  * Sets Infinite Scroll's query object if necessary.
