@@ -83,6 +83,9 @@ Underscores is distributed under the terms of the GNU GPL v2 or later.
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
 }
+.clear {
+	clear: both;
+}
 
 
 /***
@@ -184,6 +187,10 @@ Underscores is distributed under the terms of the GNU GPL v2 or later.
 }
 #article_list > #blog-list {
 	margin: 0 2.5%; /* smaller because blog-list has lost of negative margins */
+}
+#article_list .list-content-categories {
+	top: 1.6rem !important;
+    margin-bottom: 12em !important;
 }
 
 #article_list > #blog-list .list-item {
@@ -449,7 +456,7 @@ Underscores is distributed under the terms of the GNU GPL v2 or later.
 }
 
 .main > article > #article_body {
-	padding-top: 7em;
+	padding-top: 8em;
 	width: 50%;
 	margin-left: 50%;
 	position: relative;
@@ -640,8 +647,8 @@ nav a.right-menu:focus {
 }
 
 a.left-menu {
-	background: rgba(246,246,246,0.1);
-	color: #f6f6f6;
+    background: rgba(246,246,246,0.5);
+    color: #313131;
 	border: rgb(246,246,246) 1px solid;
 	font-weight: 700;
 }
