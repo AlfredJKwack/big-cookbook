@@ -117,7 +117,7 @@ add_action( 'widgets_init', 'big_cookbook_widgets_init' );
  * @uses wp_enqueue_style
  */
 function big_cookbook_scripts_important() {
-	wp_enqueue_style( 'normalize-css', get_template_directory_uri() . '/lib/vendor/normalize.css', array() );
+	wp_enqueue_style( 'normalize-css', get_template_directory_uri() . '/lib/vendor/normalize.min.css', array() );
 }
 add_action( 'wp_enqueue_scripts', 'big_cookbook_scripts_important', 5 );
 
@@ -131,13 +131,13 @@ function big_cookbook_scripts() {
 
 	wp_enqueue_style( 'big-cookbook-style', get_stylesheet_uri() );
 
-	wp_enqueue_style( 'focuspoint', get_template_directory_uri() . '/lib/vendor/focuspoint.css', array() );
+	wp_enqueue_style( 'focuspoint', get_template_directory_uri() . '/lib/vendor/focuspoint.min.css', array() );
 
-	wp_enqueue_script( 'focuspoint', get_template_directory_uri() . '/lib/vendor/jquery.focuspoint.js', array() );
+	wp_enqueue_script( 'focuspoint', get_template_directory_uri() . '/lib/vendor/jquery-focuspoint.min.js', array() );
 
-	wp_enqueue_script( 'smartcrop', get_template_directory_uri() . '/lib/vendor/smartcrop.js', array() );
+	wp_enqueue_script( 'smartcrop', get_template_directory_uri() . '/lib/vendor/smartcrop.min.js', array() );
 
-	wp_enqueue_script( 'background-check', get_template_directory_uri() . '/lib/vendor/background-check.js', array() );
+	wp_enqueue_script( 'background-check', get_template_directory_uri() . '/lib/vendor/background-check.min.js', array() );
 
 	wp_enqueue_script( 'big-cookbook-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
 
