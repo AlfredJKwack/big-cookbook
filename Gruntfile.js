@@ -6,7 +6,7 @@ module.exports = function( grunt ) {
       main: {
         files: [
           { src:'node_modules/jquery-focuspoint/css/focuspoint.css',      dest:'lib/vendor/focuspoint.css' },
-          { src:'node_modules/normalize-css/normalize.css',               dest:'lib/vendor/normalize.css' },
+          { src:'node_modules/normalize.css/normalize.css',               dest:'lib/vendor/normalize.css' },
           { src:'node_modules/jquery/dist/jquery.min.js',                 dest:'lib/vendor/jquery.min.js' },
           { src:'node_modules/jquery-focuspoint/js/jquery.focuspoint.js', dest:'lib/vendor/jquery-focuspoint.js' },
           { src:'node_modules/smartcrop/smartcrop.js',                    dest:'lib/vendor/smartcrop.js' },

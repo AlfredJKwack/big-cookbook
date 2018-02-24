@@ -5,7 +5,7 @@
   "dependencies": {
     "jquery": "^2.2.1",
     "jquery-focuspoint": "",
-    "normalize-css": "",
+    "normalize.css": "",
     "smartcrop": "jwagner/smartcrop.js#1be7ace",
     "background-check": "kennethcachia/background-check"
   },
