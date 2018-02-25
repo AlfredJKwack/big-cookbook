@@ -112,19 +112,21 @@ h2.comments-title {
     background: #f6f6f6;
 }
 ol.comment-list li.comment {
+/*
 	border-bottom: 1px dotted rgba(85,85,85,1);
+*/
 }
 ol.comment-list li.comment div.vcard img.avatar {
 	border: 5px solid rgba(85,85,85,0.25);
 }
 ol.comment-list li.comment ol.children li.depth-2 {
-	border-left: 5px solid rgba(85,85,85,1);
+	border-left: 1px dotted rgba(85,85,85,1);
 }
 ol.comment-list li.comment ol.children li.depth-3 {
-	border-left: 5px solid rgba(85,85,85,0.75);
+	border-left: 1px dotted rgba(85,85,85,1);
 }
 ol.comment-list li.comment ol.children li.depth-4 {
-	border-left: 5px solid rgba(85,85,85,0.5);
+	border-left: 1px dotted rgba(85,85,85,1);
 }
 ol.comment-list li.even {
 	background: rgb(246,246,246);
@@ -133,7 +135,7 @@ ol.comment-list li.odd {
 	background: rgb(242,242,242);
 }
 ol.comment-list li.parent {
-	border-left: 5px solid #903; /* also used for coloring first letter of article */
+	border-left: 1px dotted rgba(85,85,85,1);
 }	
 #brand-wrapper {
 	background: rgba(255,255,255,1);

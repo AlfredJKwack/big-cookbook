@@ -274,7 +274,7 @@ Underscores is distributed under the terms of the GNU GPL v2 or later.
 	    text-transform: uppercase;
 	}
 
-article {
+.main > article {
 	position: relative;
 	z-index: 1;
 	width: 100vw;
@@ -866,9 +866,6 @@ ol.comment-list {
 	ol.comment-list li.comment div.comment-author {
 	}
 	ol.comment-list li.comment div.vcard {
-		/*
-		font: normal 16px georgia, times, serif;
-		*/
 	}
 	ol.comment-list li.comment div.vcard cite.fn {
 		font-style: normal;
@@ -927,13 +924,13 @@ ol.comment-list {
 	ol.comment-list li.comment ol.children li.comment-author-admin {
 	}
 	ol.comment-list li.comment ol.children li.depth-2 {
-		margin: 0 0 .25em .25em;
+		margin: 0 0 1em .25em;
 	}
 	ol.comment-list li.comment ol.children li.depth-3 {
-		margin: 0 0 .25em .25em;
+		margin: 0 0 1em .25em;
 	}
 	ol.comment-list li.comment ol.children li.depth-4 {
-		margin: 0 0 .25em .25em;
+		margin: 0 0 1em .25em;
 	}
 	ol.comment-list li.comment ol.children li.depth-5 {
 	}
