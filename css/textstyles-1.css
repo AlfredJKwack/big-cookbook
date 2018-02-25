@@ -87,7 +87,6 @@
 	}
 	#article_body > section > p:first-child:first-letter { 
 		float: left; 
-		color: #903; 
 		font-size: 6rem; 
 		font-weight: bold;
 		line-height: 5rem; 
@@ -106,14 +105,11 @@
 		quotes: "“" "”" "‘" "’";
 	}
 	blockquote {
-	    background: #f9f9f9;
-	    border-left: 10px solid #ccc;
 	    margin: 1.5em 10px;
 	    padding: .5em 10px;
 	}
 	
 	blockquote:before {
-	    color: #ccc;
 	    content: open-quote;
 	    font-family: "Times New Roman", Times, serif;
 	    font-size: 6em;
@@ -144,55 +140,18 @@
 		font-weight: 400;
 		vertical-align: bottom;
 	/*	white-space: nowrap;	*/
-		color: #404d5b;
-		border-bottom: 1px solid rgba(52,73,94,0.4);
 		-webkit-transition: background-color 0.3s, border-color 0.3s;
 		-moz-transition: background-color 0.3s, border-color 0.3s;
 		-ms-transition: background-color 0.3s, border-color 0.3s;
 		-o-transition: background-color 0.3s, border-color 0.3s;
 		transition: background-color 0.3s, border-color 0.3s; 	
 	}
-	a:hover:not(.button), 
-	a:focus:not(.button) {
-		border-color: rgba(52,73,94,0);
-		background-color: rgba(52,73,94,0.1);
-	}
-	/* deal with special cases */
-	.background--dark a {
-    	color: white;
-	}
-	.background--light a {
-    	color: black;
-	}
-	.background--dark a:hover, 
-	.background--dark a:focus {
-		border-color: rgba(52,73,94,0);
-		background-color: rgba(102, 109, 116, 0.5);
-	}
 
 	#primary-menu {
 		font-size: 1.2rem;
 		font-family: 'Montserrat', serif;	
 	}
-/*
-	#primary-menu li a {
-		color: #999;
-	}	
-	#primary-menu li a:hover,
-	#primary-menu li a:focus {
-		border-color: rgba(52,73,94,0);
-		background-color: rgba(102, 109, 116, 0.5);
-		color: #fff;	
-	}
-	#primary-menu li.current-menu-item a {
-		color: #404d5b;
-	}
-	#primary-menu li.current-menu-item a:hover,
-	#primary-menu li.current-menu-item a:focus {
-		background-color: rgba(102, 109, 116, 0.1);
-	}		
 
-*/
 /***
  * lists	
  */
@@ -214,8 +173,6 @@
 	}
 	ol li::before {
 		font-size: 1.3rem;
-	    background-color: #f9f9f9;
-	    border: 1px solid #ccc;
 		content: counter(step-counter);
 	    position: relative;
 	    display: inline-block;
@@ -228,12 +185,3 @@
 	    -moz-border-radius: 1.5em;
 	    border-radius: 1.5em;
 	}
-
-
-.background--dark button, 
-.background--dark input, 
-.background--dark optgroup,
-.background--dark select,
-.background--dark textarea {
-	color: black	;
-}
