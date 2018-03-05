@@ -4,8 +4,8 @@
 
   "dependencies": {
     "jquery": "^3.0.0",
-    "jquery-focuspoint": "",
-    "normalize.css": "",
+    "jquery-focuspoint": "^1.0.1",
+    "normalize.css": "^8.0.0",
     "smartcrop": "jwagner/smartcrop.js#1be7ace",
     "background-check": "kennethcachia/background-check"
   },
