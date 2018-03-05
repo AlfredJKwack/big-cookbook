@@ -27,11 +27,18 @@
     <div class="main-container">
         <div class="site-brand-container">
             <header id="brand-wrapper" class="wrapper clearfix">
+
                 <h1 class="title">
-                <a id="brand-link" class="button" rel="home" href="<?php echo esc_url(home_url('/')); ?>"><span>A table</span> <span>avec</span> <span>Maya</span>
-                <!-- PHP: <?php bloginfo('name'); ?> -->
-                </a>
+                    <a id="brand-link" class="button" rel="home" href="<?php echo esc_url(home_url('/')); ?>">                  
+                    <?php if ( get_header_image() ) : ?>
+                        <img src="<?php header_image(); ?>" width="<?php echo esc_attr( get_custom_header()->width ); ?>" height="<?php echo esc_attr( get_custom_header()->height ); ?>" alt="<?php bloginfo('name'); ?>">
+                    <?php else : // End header image check. ?>
+                        <span><?php bloginfo('name'); ?></span>
+                    <?php endif; // End header text display. ?>
+                    
+                    </a>
                 </h1>
+
             </header>
         </div>
         <div class="main wrapper clearfix">
