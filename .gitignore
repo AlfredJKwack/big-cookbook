@@ -2,6 +2,7 @@
 /node_modules
 *.sublime*
 *.afphoto
+*.phpintel
 
 # OS generated files #
 ######################
