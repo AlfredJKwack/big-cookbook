@@ -21,6 +21,12 @@ add_action('customize_register', 'big_cookbook_customize_register');
  */
 function big_cookbook_customize_preview_js()
 {
-    wp_enqueue_script('big_cookbook_customizer', get_template_directory_uri().'/js/customizer.js', array('customize-preview'), '20151215', true);
+    wp_enqueue_script(
+        'big_cookbook_customizer',
+        get_template_directory_uri().'/js/customizer.js',
+        array('customize-preview'),
+        '20151215',
+        true
+    );
 }
 add_action('customize_preview_init', 'big_cookbook_customize_preview_js');
