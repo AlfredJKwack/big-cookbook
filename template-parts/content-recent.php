@@ -11,7 +11,8 @@ $r = big_cookbook_get_custom_query();
 
 if ( $r->have_posts() ) :
 
-	while ( $r->have_posts() ) : $r->the_post();
+	while ( $r->have_posts() ) :
+		$r->the_post();
 
 		get_template_part( 'template-parts/content-thumb', get_post_format() );
 

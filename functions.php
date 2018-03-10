@@ -16,29 +16,29 @@ if ( ! function_exists( 'big_cookbook_setup' ) ) :
 	 */
 	function big_cookbook_setup() {
 		/*
-         * Make theme available for translation.
-         * Translations can be filed in the /languages/ directory.
-         * If you're building a theme based on Big Cookbook, use a find and replace
-         * to change 'big-cookbook' to the name of your theme in all the template files.
-         */
+		 * Make theme available for translation.
+		 * Translations can be filed in the /languages/ directory.
+		 * If you're building a theme based on Big Cookbook, use a find and replace
+		 * to change 'big-cookbook' to the name of your theme in all the template files.
+		 */
 		load_theme_textdomain( 'big-cookbook', get_template_directory() . '/languages' );
 
 		// Add default posts and comments RSS feed links to head.
 		add_theme_support( 'automatic-feed-links' );
 
 		/*
-         * Let WordPress manage the document title.
-         * By adding theme support, we declare that this theme does not use a
-         * hard-coded <title> tag in the document head, and expect WordPress to
-         * provide it for us.
-         */
+		 * Let WordPress manage the document title.
+		 * By adding theme support, we declare that this theme does not use a
+		 * hard-coded <title> tag in the document head, and expect WordPress to
+		 * provide it for us.
+		 */
 		add_theme_support( 'title-tag' );
 
 		/*
-         * Enable support for Post Thumbnails on posts and pages.
-         *
-         * @link https://developer.wordpress.org/themes/functionality/featured-images-post-thumbnails/
-         */
+		 * Enable support for Post Thumbnails on posts and pages.
+		 *
+		 * @link https://developer.wordpress.org/themes/functionality/featured-images-post-thumbnails/
+		 */
 		add_theme_support( 'post-thumbnails' );
 		add_image_size( 'category-thumb', 460, 9999 );
 
@@ -48,9 +48,9 @@ if ( ! function_exists( 'big_cookbook_setup' ) ) :
 		));
 
 		/*
-         * Switch default core markup for search form, comment form, and comments
-         * to output valid HTML5.
-         */
+		 * Switch default core markup for search form, comment form, and comments
+		 * to output valid HTML5.
+		 */
 		add_theme_support('html5', array(
 			'search-form',
 			'comment-form',
@@ -60,9 +60,9 @@ if ( ! function_exists( 'big_cookbook_setup' ) ) :
 		));
 
 		/*
-         * Enable support for Post Formats.
-         * See https://developer.wordpress.org/themes/functionality/post-formats/
-         */
+		 * Enable support for Post Formats.
+		 * See https://developer.wordpress.org/themes/functionality/post-formats/
+		 */
 		add_theme_support('post-formats', array(
 			'aside',
 			'image',
@@ -100,13 +100,13 @@ add_action( 'after_setup_theme', 'big_cookbook_content_width', 0 );
  */
 function big_cookbook_widgets_init() {
 	register_sidebar(array(
-		'name' => esc_html__( 'Sidebar', 'big-cookbook' ),
-		'id' => 'sidebar-1',
-		'description' => '',
+		'name'          => esc_html__( 'Sidebar', 'big-cookbook' ),
+		'id'            => 'sidebar-1',
+		'description'   => '',
 		'before_widget' => '<section id="%1$s" class="widget %2$s">',
-		'after_widget' => '</section>',
-		'before_title' => '<h2 class="widget-title">',
-		'after_title' => '</h2>',
+		'after_widget'  => '</section>',
+		'before_title'  => '<h2 class="widget-title">',
+		'after_title'   => '</h2>',
 	));
 }
 add_action( 'widgets_init', 'big_cookbook_widgets_init' );
@@ -169,11 +169,11 @@ add_action( 'wp_head', 'add_ajaxurl_cdata_to_front', 1 );
 function load_single_article() {
 	global $post; // since setup_postdata needs this.
 	$post_id = $_POST['post_id'];
-	$post = get_post( $post_id, OBJECT );
+	$post    = get_post( $post_id, OBJECT );
 
 	ob_start(); // start caputring output.
 
-	if ( ! $post || (get_post_status( $post_id ) === 'private') ) {
+	if ( ! $post || ( get_post_status( $post_id ) === 'private' ) ) {
 		get_template_part( 'template-parts/content', 'none' );
 	} else {
 		setup_postdata( $post );
@@ -192,7 +192,7 @@ add_action( 'wp_ajax_nopriv_load_single_article', 'load_single_article' );
 /**
  * Change the excerpt length to something suitable for this theme.
  *
- * @param int $length length of the excerpt
+ * @param int $length length of the excerpt.
  */
 function big_cookbook_excerpt_length( $length ) {
 	return 20;
@@ -235,7 +235,7 @@ if ( ! function_exists( 'big_cookbook_get_custom_query' ) ) :
 		// set the number of posts to be the same number shown
 		// on the 'aside' of the main loop.
 		if ( $default_posts_per_page > 3 ) :
-			$default_posts_per_page = $default_posts_per_page - 1;
+			$default_posts_per_page = $default_posts_per_page--;
 		endif;
 
 		// set the pagination if available.

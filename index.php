@@ -20,7 +20,7 @@ get_header(); ?>
 			while ( have_posts() ) :
 				the_post();
 
-				if ( $wp_query->current_post === 0 ) :
+				if ( 0 === $wp_query->current_post ) :
 					/* first post */
 					get_template_part( 'template-parts/content-article', get_post_format() );
 
@@ -39,14 +39,14 @@ get_header(); ?>
 				endif;
 			endwhile;
 
-			?>    
+			?>
 						</div><!-- #blog-list -->
 					</aside><!-- #article_list -->
 			<?php
 		else :
 			get_template_part( 'template-parts/content', 'none' );
-		endif; ?>
-					
+		endif;
+		?>
 
 		</div> <!-- #main -->
 	</div> <!-- #main-container -->

@@ -16,11 +16,13 @@
 					<h1 class="page-title"><?php esc_html_e( 'We came up empty!', 'big-cookbook' ); ?></h1>
 
 					<?php
-					if ( is_search() ) : ?>
+					if ( is_search() ) :
+					?>
 						<a href="javascript:void(0)" class="left-menu button trigger more"><span>More recipes</span></a>
 						<a href="javascript:void(0)" class="left-menu button trigger less">Continue reading</a>
 					<?php
-					endif; ?>
+					endif;
+					?>
 
 				</div>
 			</header><!-- .page-header -->
@@ -30,9 +32,15 @@
 
 				<section>
 					<?php
-					if ( is_home() && current_user_can( 'publish_posts' ) ) : ?>
+					if ( is_home() && current_user_can( 'publish_posts' ) ) :
+					?>
 
-						<p><?php printf( wp_kses( __( 'Ready to publish your first post? <a href="%1$s">Get started here</a>.', 'big-cookbook' ), array( 'a' => array( 'href' => array() ) ) ), esc_url( admin_url( 'post-new.php' ) ) ); ?></p>
+						<p>
+							<?php
+							// translators: the no conent page when there is nothing.
+							printf( wp_kses( __( 'Ready to publish your first post? <a href="%1$s">Get started here</a>.', 'big-cookbook' ), array( 'a' => array( 'href' => array() ) ) ), esc_url( admin_url( 'post-new.php' ) ) );
+							?>
+						</p>
 
 					<?php
 					elseif ( is_search() ) :
@@ -52,13 +60,14 @@
 						<?php
 							get_search_form();
 
-					endif; ?>
+					endif;
+					?>
 
 					<br/>
 				</section>
 			</div><!-- #article_body -->
 		</article><!-- .no-content not-found ?> -->
-		
+
 		<aside id="article_list" class="">
 			<?php
 			get_template_part( 'template-parts/content', 'primarymenu' );

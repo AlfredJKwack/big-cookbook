@@ -7,7 +7,7 @@
  */
 
 get_header(); ?>
-	
+
 		<article class="error-404 not-found">
 			<header class="page-header">
 				<div class="featured-img focuspoint">                

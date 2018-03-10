@@ -1,9 +1,27 @@
+<?php
+/**
+ * Big Cookbook functions and definitions.
+ *
+ * @link https://codex.wordpress.org/Template_Hierarchy
+ * @package big-cookbook\tempate-parts
+ */
+
+?>
 						<div class="list-content-categories clear">
-							<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'primary-menu', 'container_class' => 'primary-menu-container' ) ); ?>
+							<?php
+							wp_nav_menu(
+								array(
+									'theme_location'  => 'primary',
+									'menu_id'         => 'primary-menu',
+									'container_class' => 'primary-menu-container',
+								)
+							);
+							?>
 <!-- 							
 							<h1 class="clear">
 								<?php
 								if ( is_search() ) :
+									// translators: shows what was searched for.
 									printf( esc_html__( 'Search Results for: %s', 'big-cookbook' ), '<span>' . get_search_query() . '</span>' );
 								elseif ( is_archive() ) :
 									the_archive_title( '<h1 class="page-title">', '</h1>' );
