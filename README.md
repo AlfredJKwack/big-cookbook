@@ -23,8 +23,6 @@ Big Notes
 
 To Do:
 =============
-* Styling of the 'older posts' button on the left menu pane. Also look into default # loading loop and what the user settings could affect.
-* Change mousepointer on right hand pane when left menu is open (and trap clicks to close menu. Hover over logo to see it now.
 * Check final location of stylesheet(s) will be in line with what users need to be able to override easily
 * Prepare build scripts to uglify it all
 * Create configuration screens for wordpress (check major templates for ideas)

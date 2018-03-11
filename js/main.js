@@ -5,7 +5,8 @@ jQuery( document ).ready( function( $ ) {
 	var setLeftMenuEvents,
 		setRightMenuEvents,
 		setFeaturedImgCandy,
-		loadArticle;
+		loadArticle,
+		closeAllMenus;
 
 	/**
 	 * jQuery Easing v1.3
@@ -48,7 +49,7 @@ jQuery( document ).ready( function( $ ) {
 			}
 
 			$( 'body' ).toggleClass( 'is--pushed-right' );
-		} );
+		});
 	};
 
 	/**
@@ -65,7 +66,7 @@ jQuery( document ).ready( function( $ ) {
 			}
 
 			$( 'body' ).toggleClass( 'is--pushed-left' );
-		} );
+		});
 	};
 
 	/**
@@ -273,7 +274,7 @@ jQuery( document ).ready( function( $ ) {
 	});
 
 	// Set up the menu handlers
-	setLeftMenuEvents( '.left-menu' );
+	setLeftMenuEvents( '#abstract', '.left-menu' );
 	setRightMenuEvents( '.right-menu' );
 
 	// Set up the featured image

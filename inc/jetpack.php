@@ -18,11 +18,12 @@ function big_cookbook_jetpack_setup() {
 	// Add theme support for Infinite Scroll.
 	add_theme_support(
 		'infinite-scroll', array(
-			'container'      => 'blog-list"',
+			'container'      => 'blog-list',
 			'render'         => 'big_cookbook_infinite_scroll_render',
 			'footer_widgets' => false,
 			'type'           => 'click',
 			'wrapper'        => false,
+			'posts_per_page' => 10,
 		)
 	);
 

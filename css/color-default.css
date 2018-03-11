@@ -82,6 +82,10 @@ ol li::before {
 #blog-list .list-item-meta {
     color: rgba(var(--article-opposite-accent),0.6);
 }
+
+#infinite-handle span {
+	background: rgb(var(--nav-accent));
+}
 article > header {
 	background-color: rgb(var(--heroimg-accent));
 }
