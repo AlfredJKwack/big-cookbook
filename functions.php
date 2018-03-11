@@ -70,12 +70,6 @@ if ( ! function_exists( 'big_cookbook_setup' ) ) :
 			'quote',
 			'link',
 		));
-
-		// Set up the WordPress core custom background feature.
-		add_theme_support('custom-background', apply_filters('big_cookbook_custom_background_args', array(
-			'default-color' => 'ffffff',
-			'default-image' => '',
-		)));
 	}
 endif;
 add_action( 'after_setup_theme', 'big_cookbook_setup' );
@@ -86,11 +80,12 @@ add_action( 'after_setup_theme', 'big_cookbook_setup' );
  * Priority 0 to make it available to lower priority callbacks.
  *
  * @global int $content_width
- */
+
 function big_cookbook_content_width() {
 	$GLOBALS['content_width'] = apply_filters( 'big_cookbook_content_width', 640 );
 }
 add_action( 'after_setup_theme', 'big_cookbook_content_width', 0 );
+ */
 
 /**
  * Register widget area.
@@ -218,6 +213,14 @@ require get_template_directory() . '/inc/extras.php';
  * Customizer additions.
  */
 require get_template_directory() . '/inc/customizer.php';
+/**
+ * Enqueue customizer CCS additions.
+ */
+function big_cookbook_customizer_scripts() {
+	$custom_css = big_cookbook_get_customizer_css();
+	wp_add_inline_style( 'big-cookbook-style', $custom_css );
+}
+add_action( 'wp_enqueue_scripts', 'big_cookbook_customizer_scripts' );
 
 /**
  * Load Jetpack compatibility file.

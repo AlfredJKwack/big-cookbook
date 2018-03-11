@@ -29,7 +29,7 @@ jQuery( document ).ready( function( $ ) {
 				return -c * ( t /= d ) * ( t - 2 ) + b;
 			},
 			easeInOutQuad: function( x, t, b, c, d ) {
-				if ( ( t /= d / 2 ) < 1 ) {
+				if ( 1 > ( t /= d / 2 ) ) {
 					return c / 2 * t * t + b;
 				};
 				return -c / 2 * ( ( --t ) * ( t - 2 ) - 1 ) + b;
@@ -137,23 +137,23 @@ jQuery( document ).ready( function( $ ) {
 				 * @requires FocusPoint.js
 				 */
 				focusPoint = calcFocus( cropData.topCrop, imgData );
-				$( $theImage ).parent().attr( {
+				$( $theImage ).parent().attr({
 					'data-focus-x': focusPoint.x,
 					'data-focus-y': focusPoint.y,
 					'data-focus-w': imgData.w,
 					'data-focus-h': imgData.h
-				} );
+				});
 				$( $theImage ).parent().focusPoint();
 
 				/**
 				 * Set the text color based on the feature image background
 				 * @requires BackgroundCheck.js
 				 */
-				BackgroundCheck.init( {
+				BackgroundCheck.init({
 					'minComplexity': 16,
 					'targets': '#abstract h1, #meta, #brand-link',
 					'images': $theImage
-				} );
+				});
 
 				// Make the image appear
 				$( $theImage )
@@ -161,7 +161,7 @@ jQuery( document ).ready( function( $ ) {
 					.hide()
 					.fadeIn( 1800, 'easeInOutQuad' );
 
-			} ).attr( 'src', $theImage.src );
+			}).attr( 'src', $theImage.src );
 
 		} // End of: if ( $( selector ).length )
 
@@ -279,4 +279,4 @@ jQuery( document ).ready( function( $ ) {
 
 	// Set up the featured image
 	setFeaturedImgCandy( 'div.featured-img.focuspoint img' );
-} );
+});

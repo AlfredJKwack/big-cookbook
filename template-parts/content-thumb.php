@@ -23,7 +23,7 @@
 			echo $entry_permalink; // WPCS: XSS ok.
 			?>
 
-				<div class="thumbnail" style="background-color: #131723">
+				<div class="thumbnail">
 					<div class="image-wrapper content-fill" style="overflow: hidden;">
 						<?php
 						if ( has_post_thumbnail() ) {
