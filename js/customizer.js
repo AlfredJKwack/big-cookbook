@@ -53,7 +53,7 @@
 	};
 	setViewPushLeft = function() {
 		$( 'body' ).removeClass( 'is--pushed-left is--pushed-right' );
-		$( 'body' ).addClass( 'is--pushed-right' );
+		$( 'body' ).addClass( 'is--pushed-left' );
 	};
 	setViewPushRight = function() {
 		$( 'body' ).removeClass( 'is--pushed-left is--pushed-right' );
@@ -133,7 +133,7 @@
 	// Show article when messing with top colors.
 	wp.customize( 'article_opposite_accent_color', function( value ) {
 		value.bind( function( to ) {
-			setViewNormal();
+			setViewPushLeft();
 			setCssParam( '--article-opposite-accent', to, '49,49,49' );
 		});
 	});
