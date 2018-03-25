@@ -21,53 +21,72 @@ function big_cookbook_customize_register( $wp_customize ) {
 		'sanitize_callback' => 'sanitize_hex_color',
 	);
 
-	// Article accent color.
-	$wp_customize->add_setting( 'article_accent_color', $color_setting_opts );
-	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'article_accent_color', array(
+	// Article base.
+	$wp_customize->add_setting( 'article_base', $color_setting_opts );
+	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'article_base', array(
+		'section' => 'colors',
+		'label'   => __( 'Article base color', 'theme' ),
+	) ) );
+	$wp_customize->add_setting( 'article_text', $color_setting_opts );
+	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'article_text', array(
+		'section' => 'colors',
+		'label'   => __( 'Article text color', 'theme' ),
+	) ) );
+	$wp_customize->add_setting( 'article_text_accent', $color_setting_opts );
+	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'article_text_accent', array(
 		'section' => 'colors',
 		'label'   => __( 'Article accent color', 'theme' ),
 	) ) );
 
-	// Article opposite accent color.
-	$wp_customize->add_setting( 'article_opposite_accent_color', $color_setting_opts );
-	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'article_opposite_accent_color', array(
+	// Hero Image.
+	$wp_customize->add_setting( 'heroimg_base', $color_setting_opts );
+	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'heroimg_base', array(
 		'section' => 'colors',
-		'label'   => __( 'Article invert accent color', 'theme' ),
+		'label'   => __( 'Hero image base color', 'theme' ),
 	) ) );
-
-	// Text accent color.
-	$wp_customize->add_setting( 'text_accent_color', $color_setting_opts );
-	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'text_accent_color', array(
+	$wp_customize->add_setting( 'heroimg_text', $color_setting_opts );
+	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'heroimg_text', array(
 		'section' => 'colors',
-		'label'   => __( 'Text accent color', 'theme' ),
+		'label'   => __( 'Hero image text color', 'theme' ),
 	) ) );
-
-	// Hero image accent color.
-	$wp_customize->add_setting( 'heroimg_accent_color', $color_setting_opts );
-	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'heroimg_accent_color', array(
+	$wp_customize->add_setting( 'heroimg_text_accent', $color_setting_opts );
+	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'heroimg_text_accent', array(
 		'section' => 'colors',
 		'label'   => __( 'Hero image accent color', 'theme' ),
 	) ) );
 
-	// Navigation accent color.
-	$wp_customize->add_setting( 'nav_accent_color', $color_setting_opts );
-	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'nav_accent_color', array(
+	// Article list.
+	$wp_customize->add_setting( 'article_list_base', $color_setting_opts );
+	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'article_list_base', array(
 		'section' => 'colors',
-		'label'   => __( 'Navigation accent color', 'theme' ),
+		'label'   => __( 'Article list base color', 'theme' ),
 	) ) );
-
-	// Article list accent color.
-	$wp_customize->add_setting( 'articlelist_accent_color', $color_setting_opts );
-	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'articlelist_accent_color', array(
+	$wp_customize->add_setting( 'article_list_text', $color_setting_opts );
+	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'article_list_text', array(
+		'section' => 'colors',
+		'label'   => __( 'Article list text color', 'theme' ),
+	) ) );
+	$wp_customize->add_setting( 'article_list_text_accent', $color_setting_opts );
+	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'article_list_text_accent', array(
 		'section' => 'colors',
 		'label'   => __( 'Article list accent color', 'theme' ),
 	) ) );
 
-	// Hero & Nav accent color.
-	$wp_customize->add_setting( 'heronav_opposite_accent_color', $color_setting_opts );
-	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'heronav_opposite_accent_color', array(
+	// Navigation pane
+	$wp_customize->add_setting( 'nav_base', $color_setting_opts );
+	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'nav_base', array(
 		'section' => 'colors',
-		'label'   => __( 'Hero image and nav invert accent color', 'theme' ),
+		'label'   => __( 'Navigation base color', 'theme' ),
+	) ) );
+	$wp_customize->add_setting( 'nav_text', $color_setting_opts );
+	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'nav_text', array(
+		'section' => 'colors',
+		'label'   => __( 'Navigation text color', 'theme' ),
+	) ) );
+	$wp_customize->add_setting( 'nav_text_accent', $color_setting_opts );
+	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'nav_text_accent', array(
+		'section' => 'colors',
+		'label'   => __( 'Navigation accent color', 'theme' ),
 	) ) );
 
 }
@@ -96,10 +115,68 @@ function big_cookbook_convert_hex2rgb( $hex ) {
 	$b = hexdec( $b );
 
 	return array(
-		'red'   => $r,
-		'green' => $g,
-		'blue'  => $b,
+		'r' => $r,
+		'g' => $g,
+		'b' => $b,
 	);
+}
+
+/**
+ * Converts rgb to hsl color format
+ * @param  int $r red value (0 to 255)
+ * @param  int $g green value (0 to 255)
+ * @param  int $b blue value (0 to 255)
+ * @return array    hsl value as array [h,s,l]
+ */
+function big_cookbook_convert_rgb2hsl( $r, $g, $b ) {
+	$r /= 255;
+	$g /= 255;
+	$b /= 255;
+
+	$max = max( $r, $g, $b );
+	$min = min( $r, $g, $b );
+	$l   = ( $max + $min ) / 2;
+
+	if ( $max == $min ) {
+		$h = $s = 0;
+	} else {
+		$d = $max - $min;
+		$s = $l > 0.5 ? $d / ( 2 - $max - $min ) : $d / ( $max + $min );
+		switch ( $max ) {
+			case $r:
+				$h = ( $g - $b ) / $d + ( $g < $b ? 6 : 0 );
+				break;
+			case $g:
+				$h = ( $b - $r ) / $d + 2;
+				break;
+			case $b:
+				$h = ( $r - $g ) / $d + 4;
+				break;
+		}
+		$h /= 6;
+	}
+
+	$h = floor( $h * 360 );
+	$s = floor( $s * 100 );
+	$l = floor( $l * 100 );
+
+	return array(
+		'h' => $h,
+		's' => $s . '%',
+		'l' => $l . '%',
+	);
+}
+
+/**
+ * converts hex to hsl color
+ * @param  string $hex hexadecimal color
+ * @return array      hsl value as array [h,s,l]
+ * @see big_cookbook_convert_hex2rgb convert hex to rgb
+ * @see big_cookbook_convert_rgb2hsl convert rgb to hsl
+ */
+function big_cookbook_convert_hex2hsl( $hex ) {
+	$rgb = big_cookbook_convert_hex2rgb( $hex );
+	return big_cookbook_convert_rgb2hsl( $rgb[ 'r' ], $rgb[ 'g' ], $rgb[ 'b' ] );
 }
 
 /**
@@ -111,7 +188,7 @@ function big_cookbook_convert_hex2rgb( $hex ) {
 function big_cookbook_get_clean_color_mod( $name ) {
 	$mod_value = get_theme_mod( $name, '' );
 	if ( '' !== $mod_value ) {
-		$mod_value = big_cookbook_convert_hex2rgb( $mod_value );
+		$mod_value = big_cookbook_convert_hex2hsl( $mod_value );
 		$mod_value = implode( ',', $mod_value );
 	};
 	return $mod_value;
@@ -124,54 +201,92 @@ function big_cookbook_get_clean_color_mod( $name ) {
  */
 function big_cookbook_get_customizer_css() {
 
-	$article_accent_color          = big_cookbook_get_clean_color_mod( 'article_accent_color' );
-	$articlelist_accent_color      = big_cookbook_get_clean_color_mod( 'articlelist_accent_color' );
-	$heroimg_accent_color          = big_cookbook_get_clean_color_mod( 'heroimg_accent_color' );
-	$nav_accent_color              = big_cookbook_get_clean_color_mod( 'nav_accent_color' );
-	$article_opposite_accent_color = big_cookbook_get_clean_color_mod( 'article_opposite_accent_color' );
-	$heronav_opposite_accent_color = big_cookbook_get_clean_color_mod( 'heronav_opposite_accent_color' );
-	$text_accent_color             = big_cookbook_get_clean_color_mod( 'text_accent_color' );
+	$article_base             = big_cookbook_get_clean_color_mod( 'article_base' );
+	$article_text             = big_cookbook_get_clean_color_mod( 'article_text' );
+	$article_text_accent      = big_cookbook_get_clean_color_mod( 'article_text_accent' );
+	$heroimg_base             = big_cookbook_get_clean_color_mod( 'heroimg_base' );
+	$heroimg_text             = big_cookbook_get_clean_color_mod( 'heroimg_text' );
+	$heroimg_text_accent      = big_cookbook_get_clean_color_mod( 'heroimg_text_accent' );
+	$article_list_base        = big_cookbook_get_clean_color_mod( 'article_list_base' );
+	$article_list_text        = big_cookbook_get_clean_color_mod( 'article_list_text' );
+	$article_list_text_accent = big_cookbook_get_clean_color_mod( 'article_list_text_accent' );
+	$nav_base                 = big_cookbook_get_clean_color_mod( 'nav_base' );
+	$nav_text                 = big_cookbook_get_clean_color_mod( 'nav_text' );
+	$nav_text_accent          = big_cookbook_get_clean_color_mod( 'nav_text_accent' );
 
 	ob_start();
 	?>
 	:root {
 	<?php
 
-	if ( ! empty( $article_accent_color ) ) {
+	// Article.
+	if ( ! empty( $article_base ) ) {
 		?>
-			--article-accent: <?php echo esc_attr( $article_accent_color ); ?>;
+			--article-base: <?php echo esc_attr( $article_base ); ?>;
 		<?php
 	}
-	if ( ! empty( $articlelist_accent_color ) ) {
+	if ( ! empty( $article_text ) ) {
 		?>
-			--articlelist-accent: <?php echo esc_attr( $articlelist_accent_color ); ?>;
+			--article-text: <?php echo esc_attr( $article_text ); ?>;
 		<?php
 	}
-	if ( ! empty( $heroimg_accent_color ) ) {
+	if ( ! empty( $article_text_accent ) ) {
 		?>
-			--heroimg-accent: <?php echo esc_attr( $heroimg_accent_color ); ?>;
+			--article-text-accent: <?php echo esc_attr( $article_text_accent ); ?>;
 		<?php
 	}
-	if ( ! empty( $nav_accent_color ) ) {
+
+	// Hero image.
+	if ( ! empty( $heroimg_base ) ) {
 		?>
-			--nav-accent: <?php echo esc_attr( $nav_accent_color ); ?>;
+			--heroimg-base: <?php echo esc_attr( $heroimg_base ); ?>;
 		<?php
 	}
-	if ( ! empty( $article_opposite_accent_color ) ) {
+	if ( ! empty( $heroimg_text ) ) {
 		?>
-			--article-opposite-accent: <?php echo esc_attr( $article_opposite_accent_color ); ?>;
+			--heroimg-text: <?php echo esc_attr( $heroimg_text ); ?>;
 		<?php
 	}
-	if ( ! empty( $heronav_opposite_accent_color ) ) {
+	if ( ! empty( $heroimg_text_accent ) ) {
 		?>
-			--heronav-opposite-accent: <?php echo esc_attr( $heronav_opposite_accent_color ); ?>;
+			--heroimg-text-accent: <?php echo esc_attr( $heroimg_text_accent ); ?>;
 		<?php
 	}
-	if ( ! empty( $text_accent_color ) ) {
+
+	// Article list.
+	if ( ! empty( $article_list_base ) ) {
 		?>
-			--text-accent: <?php echo esc_attr( $text_accent_color ); ?>;
+			--article-list-base: <?php echo esc_attr( $article_list_base ); ?>;
 		<?php
 	}
+	if ( ! empty( $article_list_text ) ) {
+		?>
+			--article-list-text: <?php echo esc_attr( $article_list_text ); ?>;
+		<?php
+	}
+	if ( ! empty( $article_list_text_accent ) ) {
+		?>
+			--article-list-text-accent: <?php echo esc_attr( $article_list_text_accent ); ?>;
+		<?php
+	}
+
+	// Navigation. 
+	if ( ! empty( $nav_base ) ) {
+		?>
+			--nav-base: <?php echo esc_attr( $nav_base ); ?>;
+		<?php
+	}
+	if ( ! empty( $nav_text ) ) {
+		?>
+			--nav-text: <?php echo esc_attr( $nav_text ); ?>;
+		<?php
+	}
+	if ( ! empty( $nav_text_accent ) ) {
+		?>
+			--nav-text-accent: <?php echo esc_attr( $nav_text_accent ); ?>;
+		<?php
+	}
+
 	?>
 	}
 	<?php

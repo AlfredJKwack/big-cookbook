@@ -2,210 +2,287 @@
 
 This file isolates the color elements of a theme
 It leverages CSS3 custom variables
-We accept that IE below Edge (11 and down) will not work
-
---article-accent and --articlelist-accent: These colors are the 
-  background to the main article and article list respectively.
-
---heroimg-accent and --nav-accent: the hero image and navigration 
-  pane backgrounds respecvitvely. 
-
---article-opposite-accent: this color is applied to text elments 
-  and button outlines on areas covering the main article 
-  (--article-accent and --artciclelist-accent).
-
---heronav-opposite-accent: this color is applied to text elments 
-  and button outlines on areas covering the right nagivation 
-  panel (--nav-accent) as well as the hero image area 
-  (--heroimg-accent).
-
---text-accent: Special text items
+We accept that IE below Edge (11 and down) will not work.
 
 Note: the colors are also present in customizer.js
 
 */
 
+
+/*--------------------------------------------------------------
+>>> TABLE OF CONTENTS:
+----------------------------------------------------------------
+# Article
+	## Posts and pages
+	## Comments
+# Hero Image
+# Article List
+	## base
+	## Menu
+# Navigation Pane
+	## Links
+	## Menus
+
+# Other
+	## Accessibility
+	## Widgets
+	## Infinite scroll
+	## Media
+
+--------------------------------------------------------------*/
+
 :root {
-	--article-accent: 246,246,246;
-	--articlelist-accent: 238,238,238;
-	--heroimg-accent: 169, 169, 169;
-	--nav-accent: 49,49,49;
-	--article-opposite-accent: 49,49,49;
-	--heronav-opposite-accent: 246,246,246;
-	--text-accent: 153, 0, 51;
+
+	/* oranges */
+	--article-base: 20, 100%, 65%;	/* also sets article list cards */
+	--article-text: 19, 73%, 20%;	/* also sets article list cards */ 
+	--article-text-accent: 20, 100%, 50%; 
+
+	--heroimg-base: 259, 100%, 76%;
+	--heroimg-text: 258, 73%, 20%;
+	--heroimg-text-accent: 259, 100%, 50%;
+
+	--article-list-base: 180, 100%, 44%;
+	--article-list-text: 180, 100%, 18%;
+	--article-list-text-accent: 180, 100%, 28%;
+
+	--nav-base: 121, 100%, 9%;
+	--nav-text: 121, 100%, 32%;
+	--nav-text-accent: 121, 100%, 46%;
+
 }
 
+/*--------------------------------------------------------------
+# Article
+--------------------------------------------------------------*/
 
-a:not(.button) {
-	color: rgb(var(--nav-accent));
-	border-bottom: 1px solid rgba(var(--nav-accent),0.2)
-}
-a:hover:not(.button), 
-a:focus:not(.button) {
-	border-color: rgba(var(--nav-accent),0.2);
-	background-color: rgba(var(--nav-accent),0.1);
-}
-.background--dark a:hover, 
-.background--dark a:focus {
-	border-color: rgba(0,0,0,0);
-	background-color: rgba(var(--heronav-opposite-accent),0.2);
-}
-ol li::before {
-    background-color: rgb(var(--article-accent));
-    border: 1px solid rgba(var(--heroimg-accent),0.2);
-}	
+#article_body,
+.main-container  {  /* no one should see .main-container color */
+	background-color: hsl(var(--article-base));
+	color: hsl(var(--article-text));
+	}
 
-/* background-check.js */
-.background--light {
-  color: rgb(var(--article-opposite-accent));
-}
-.background--dark {
-  color: rgb(var(--heronav-opposite-accent));
-}
-.main-container {
-	background-color: rgb(var(--article-accent));
-	/* no one sees this color */
-}
+	#article_body a:not(.button),
+	#article_body ol li::before {
+		color: hsl(var(--article-text-accent));
+		border-bottom: 1px solid hsla(var(--article-text-accent),0.2);
+	}
+	#article_body a:hover:not(.button), 
+	#article_body a:focus:not(.button) {
+		border-color: 		hsla(var(--article-text-accent),0.2);
+		background-color: 	hsla(var(--article-text-accent),0.1);
+	}
 
-#article_list {
-    background-color: rgb(var(--articlelist-accent));
-}
+	#article_body img.alignnone {
+		/* background: rgb(var(--heroimg-accent)); */
+	}
+	#article_body > section > p:first-child:first-letter,
+	footer.entry-footer { 
+		color: hsl(var(--article-text-accent)); 
+	}
 
-#blog-list .thumbnail {
-	background-color: rgb(var(--heroimg-accent));
-}
-#blog-list .list-item-text {
-	background-color: rgb(var(--article-accent));	
-}
-#blog-list .list-item-text .title,
-#blog-list .excerpt {
-	color: rgb(var(--article-opposite-accent));
-}
-#blog-list .list-item-meta {
-    color: rgba(var(--article-opposite-accent),0.6);
-}
-
-#infinite-handle span {
-	background: rgb(var(--nav-accent));
-}
-article > header {
-	background-color: rgb(var(--heroimg-accent));
-}
-#article_body {
-	background-color: rgb(var(--article-accent));
-}
-#article_body img.alignnone {
-	background: rgb(var(--heroimg-accent));
-}
-#article_body > section > p:first-child:first-letter { 
-	color: rgb(var(--text-accent)); 
-}
-footer.entry-footer {
-    background: rgb(var(--article-accent));
-}
-form.search-form input.search-field {
-	border: 1px solid rgb(var(--heronav-opposite-accent));
-	color: rgb(var(--heronav-opposite-accent));
-}
-blockquote {
-    background: rgba(var(--heroimg-accent),0.2);
-    border-left: 10px solid rgba(var(--heroimg-accent),0.6);
-}
+	blockquote {
+	    background: hsla(var(--article-text-accent),0.2);
+	    border-left: 10px solid hsla(var(--article-text-accent),0.6);
+	}
 	blockquote:before {
-    color: rgba(var(--heroimg-accent),0.6);
-}
-nav a.right-menu,
-nav a.right-menu:hover,
-nav a.right-menu:focus  {
-	background-color: inherit;
-	color: rgb(var(--heronav-opposite-accent));
-}
-nav a.right-menu:hover,
-nav a.right-menu:focus {
-	color: rgba(var(--heronav-opposite-accent),0.8);
-}
-a.right-menu {
-	color: rgb(var(--article-opposite-accent));
-}
-a.left-menu {
-    background: rgba(var(--heronav-opposite-accent),0.5);
-    color: rgb(var(--article-opposite-accent));
-	border: rgb(var(--heronav-opposite-accent)) 1px solid;
-	font-weight: 700;
-}
-a.left-menu:hover {
-    background-color: rgba(var(--heronav-opposite-accent),0.2);
-    box-shadow: inset 0 0 10px rgba(var(--heronav-opposite-accent),0.1);	
-}
-@media all and (max-width: 1023px) {
-	#article_body a.right-menu {
-		color: rgb(var(--heronav-opposite-accent));
-		background: rgba(var(--heronav-opposite-accent),0.1);
+    	color: hsla(var(--article-text-accent),0.6);
 	}
-	#article_body a.right-menu:hover {
-	    background-color: rgba(var(--heronav-opposite-accent),0.2);
-	    box-shadow: inset 0 0 10px rgba(var(--heronav-opposite-accent),0.1);	
+	a.right-menu {
+		color: hsl(var(--article-text-accent));
 	}
-}
+		@media all and (max-width: 1023px) {
+			#article_body a.right-menu {
+				color: hsl(var(--article-text-accent));
+				background-color: hsla(var(--article-text-accent),0.1);
+			}
+			#article_body a.right-menu:hover {
+			    background-color: hsla(var(--article-text-accent),0.2);
+			    box-shadow: inset 0 0 10px hsla(var(--article-text-accent),0.1);
+			}
+		}	
+
+
+
+	/*----------------------------------------------------------
+	# Comments
+	----------------------------------------------------------*/	
+
+	h2.comments-title {
+	    background: hsl(var(--article-text-accent));
+	}
+	ol.comment-list li.comment {
+	}
+	ol.comment-list li.comment div.vcard img.avatar {
+		border: 5px solid hsla(var(--article-text-accent),0.25);
+	}
+	ol.comment-list li.comment ol.children li.depth-2,
+	ol.comment-list li.comment ol.children li.depth-3,
+	ol.comment-list li.comment ol.children li.depth-4,
+	ol.comment-list li.parent {
+		border-left: 1px dotted hsla(var(--article-text-accent),1);
+	}
+	ol.comment-list li.even {
+		background: hsla(var(--article-text-accent),0.15);
+	}
+	ol.comment-list li.odd {
+		background: hsla(var(--article-text-accent),0.05);
+	}	
+
+/*--------------------------------------------------------------
+# Hero Image
+--------------------------------------------------------------*/
+
+article > header {
+	background-color: hsl(var(--heroimg-base));
+	color: hsl(var(--heroimg-text));
+	}
+
+	article > header a:not(.button) {
+		color: hsl(var(--heroimg-text-accent));
+		border-bottom: 1px solid hsla(var(--heroimg-text-accent),0.2);
+	}
+	article > header a:hover:not(.button), 
+	article > header a:focus:not(.button) {
+		border-color: 		hsla(var(--heroimg-text-accent),0.2);
+		background-color: 	hsla(var(--heroimg-text-accent),0.1);
+	}
+
+	/* background-check.js */
+	.background--dark a:hover, 
+	.background--dark a:focus {
+		border-color: hsl(var(--article-list-text));
+		background-color: hsla(var(--article-list-text),0.2);
+	}
+	/* background-check.js */
+	.background--light,
+	.background--light a {
+	  color: hsl(var(--heroimg-text-accent));
+	}
+	.background--dark,
+	.background--dark a,
+	.background--dark button, 
+	.background--dark input, 
+	.background--dark optgroup,
+	.background--dark select,
+	.background--dark textarea {
+	  color: hsl(var(--heroimg-text));
+	}
+
+
+	#brand-wrapper a {
+		/* 
+		background: rgba(255,255,255,1); 
+		text-shadow: -1px -1px 0px rgba(255,255,255,0.3), 1px 1px 0px rgba(255, 255, 255, 0.8);	
+		*/
+		color: hsl(var(--heroimg-text-accent));
+	}
+
+	a.left-menu {
+	    background: hsla(var(--heroimg-text-accent),0.5);
+	    color: hsl(var(--heroimg-text-accent));
+		border: hsl(var(--heroimg-text-accent)) 1px solid;
+		font-weight: 700;
+	}
+	a.left-menu:hover {
+	    background-color: hsl(var(--heroimg-text-accent),0.2);
+	    box-shadow: inset 0 0 10px hsla(var(--heroimg-text-accent),0.1);	
+	}	
+
+	article.error-404 header.page-header,
+	article.no-content header.page-header {
+	    background-color: hsl(var(--heroimg-text-accent));
+	    filter: brightness(90%);
+	}
+/*--------------------------------------------------------------
+# Article List
+--------------------------------------------------------------*/
+#article_list {
+    background-color: hsl(var(--article-list-base));
+    color: hsl(var(--article-list-text));
+	}
+
+	/*
+		 The menu colors.
+	 */
+	#article_list a {
+		color: hsl(var(--article-list-text-accent));
+	}
+	#article_list a:hover, 
+	#article_list .current-menu-item > a,
+	#article_list ul li:hover > a {
+		background-color: hsla(var(--article-list-text-accent),0.4);
+	}
+	ul.sub-menu {
+		background-color: hsla(var(--article-list-text-accent),0.1);
+	}
+
+
+	/*
+		 The card colors are those set on the article and hero image.
+	 */
+
+	#blog-list .thumbnail {
+	background-color: hsl(var(--heroimg-base));
+	}
+	#blog-list .list-item-text {
+		background-color: hsl(var(--article-base));	
+	}
+	#blog-list .list-item-text .title,
+	#blog-list .excerpt {
+		color: hsl(var(--article-text));
+	}
+	#blog-list .list-item-meta {
+	    color: hsla(var(--article-text),0.6);
+	}
+
+	#infinite-handle span {
+		background: hsl(var(--article-base));
+		color: hsl(var(--article-text));
+	}	
+
+/*--------------------------------------------------------------
+# Navigation Pane
+--------------------------------------------------------------*/
+
 #navigation_main {
-	background-color: rgb(var(--article-opposite-accent));
-	color: rgb(var(--heronav-opposite-accent));	
-}
-ul.sub-menu {
-	background-color: rgba(var(--heroimg-accent),0.1);
-}
-div.primary-menu-container a:hover, 
-div.primary-menu-container .current-menu-item > a,
-div.primary-menu-container ul li:hover > a {
-	background-color: rgba(var(--heroimg-accent),0.4);
+	background-color: hsl(var(--nav-base));
+	color: hsl(var(--nav-text));	
+	}
+
+	nav a:not(.button) {
+		color: hsl(var(--nav-text-accent));
+		border-bottom: 1px solid hsla(var(--nav-text-accent),0.2);		
+	}
+	nav a:not(.button):hover,
+	nav a:not(.button):focus {
+		border-color: 		hsla(var(--nav-text-accent),0.2);
+		background-color: 	hsla(var(--nav-text-accent),0.1);		
+	}
+
+	nav a.right-menu,
+	nav a.right-menu:hover,
+	nav a.right-menu:focus  {
+		background-color: inherit;
+		color: hsl(var(--nav-text-accent));
+	}
+	nav a.right-menu:hover,
+	nav a.right-menu:focus {
+		color: hsla(var(--nav-text-accent),0.8);
+	}
+
+/*--------------------------------------------------------------
+# Other
+--------------------------------------------------------------*/
+
+form.search-form input.search-field {
+	border: 1px solid hsl(var(--nav-text-accent));
+	color: hsl(var(--nav-text-accent));
 }
 
-article.error-404 header.page-header,
-article.no-content header.page-header {
-    background-color: rgb(var(--heronav-opposite-accent));
-    filter: brightness(90%);
-}
-h2.comments-title {
-    background: rgb(var(--heronav-opposite-accent));
-}
-ol.comment-list li.comment {
-}
-ol.comment-list li.comment div.vcard img.avatar {
-	border: 5px solid rgba(var(--article-opposite-accent),0.25);
-}
-ol.comment-list li.comment ol.children li.depth-2,
-ol.comment-list li.comment ol.children li.depth-3,
-ol.comment-list li.comment ol.children li.depth-4,
-ol.comment-list li.parent {
-	border-left: 1px dotted rgba(var(--article-opposite-accent),1);
-}
-ol.comment-list li.even {
-	background: rgb(var(--lightest));
-}
-ol.comment-list li.odd {
-	background: rgba(var(--heroimg-accent),0.05);
-}	
-#brand-wrapper {
-	background: rgba(255,255,255,1);
-	text-shadow: -1px -1px 0px rgba(255,255,255,0.3), 1px 1px 0px rgba(255, 255, 255, 0.8);	
-}
 .screen-reader-text:focus {
-	background-color: #rgb(var(--lightest));
-	box-shadow: 0 0 2px 2px rgba(var(--article-opposite-accent),0.6);
-	color: rgb(var(--heroimg-accent));
+	background-color: hsl(var(--article-base));
+	box-shadow: 0 0 2px 2px hsla(var(--article-text-accent),0.6);
+	color: shl(var(--article-text));
 }
 
-.background--dark a {
-	color: white;
-}
-.background--light a {
-	color: black;
-}
-
-.background--dark button, 
-.background--dark input, 
-.background--dark optgroup,
-.background--dark select,
-.background--dark textarea {
-	color: black	;
-}

@@ -1020,7 +1020,7 @@ div.comment-respond {
 	  vertical-align: middle;
 	}
 	#brand-wrapper a {
-	  color: inherit;
+	  /* color: inherit; */
 	  display: flex;
 	}
 	#brand-wrapper span {	
