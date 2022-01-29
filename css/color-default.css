@@ -33,23 +33,36 @@ Note: the colors are also present in customizer.js
 
 :root {
 
-	/* oranges */
+	/* psychedelic */
 	--article-base: 20, 100%, 65%;	/* also sets article list cards */
 	--article-text: 19, 73%, 20%;	/* also sets article list cards */ 
 	--article-text-accent: 20, 100%, 50%; 
-
 	--heroimg-base: 259, 100%, 76%;
 	--heroimg-text: 258, 73%, 20%;
 	--heroimg-text-accent: 259, 100%, 50%;
-
 	--article-list-base: 180, 100%, 44%;
 	--article-list-text: 180, 100%, 18%;
 	--article-list-text-accent: 180, 100%, 28%;
-
 	--nav-base: 121, 100%, 9%;
 	--nav-text: 121, 100%, 32%;
 	--nav-text-accent: 121, 100%, 46%;
 
+
+	/* tan colors */
+	/* 
+	--article-base: 60,16%,91%;
+	--article-text: 55,23%,20%;
+	--article-text-accent: 0,0%,57%;
+	--heroimg-base: 65,11%,81%;
+	--heroimg-text: 57,100%,8%;
+	--heroimg-text-accent: 0,0%,38%;
+	--article-list-base: 0,0%,98%;
+	--article-list-text: 0,0%,88%;
+	--article-list-text-accent: 0,0%,61%;
+	--nav-base: 0,0%,14%;
+	--nav-text: 0,0%,83%;
+	--nav-text-accent: 0,0%,92%;
+ 	*/
 }
 
 /*--------------------------------------------------------------

@@ -29,6 +29,21 @@ To Do:
 	* Left hand menu width settings
 	* Logo upload
 	* Color scheme selector
+		* Review the right mix of controls. Not sure it's balanced right now. Maybe 4 sections: article, hero image, right menu, article list.
+			* Article 
+				* background = article list tile text
+				* Article text = right menu button
+				* Article text accent
+				* All links etc are a muted text accent?
+			* Hero image 
+				* backgound = article list tile image background
+				* Text elements = article text elements
+				* All links etc are a muted backgound?
+			* Right hand menu independent background, text, headers controls
+			* Article list
+				* background = 
+
+		* I
 	* Google font selector(s) and general font sizes
 	* Space for google analytics scripts
 * Test 
